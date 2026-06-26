@@ -386,16 +386,16 @@ body{
 .medical-card .mc-text{font-size:0.71rem;color:var(--muted);line-height:1.5;}
 
 /* ── ONBOARDING ── */
-#page-onboard{padding:32px 22px 32px;background:var(--bg-grad);overflow:hidden;display:flex;flex-direction:column;}
+#page-onboard{background:var(--bg-grad);overflow:hidden;display:flex;flex-direction:column;}
 .ob-progress{display:flex;gap:5px;margin-bottom:28px;}
 .ob-prog-dot{flex:1;height:3px;border-radius:99px;background:var(--surface3);transition:background 0.35s;}
 .ob-prog-dot.done{background:var(--primary);}
 .ob-icon{font-size:2.8rem;margin-bottom:14px;display:block;}
 .ob-title{font-weight:800;font-size:1.6rem;margin-bottom:8px;letter-spacing:-0.025em;line-height:1.15;color:var(--text);}
 .ob-sub{color:var(--muted);font-size:0.85rem;margin-bottom:20px;line-height:1.55;}
-.ob-body{flex:1;overflow-y:auto;min-height:0;}
-.ob-footer{margin-top:auto;position:relative;bottom:auto;background:transparent;padding:12px 0;z-index:10;}
-.ob-back{width:100%;background:none;border:none;color:var(--muted);font-family:inherit;font-size:0.82rem;cursor:pointer;margin-top:12px;padding:8px;transition:color 0.15s;border-radius:99px;letter-spacing:0.01em;}
+.ob-body{flex:1;}
+.ob-footer{display:flex;flex-direction:column;gap:8px;background:var(--bg);border-top:1px solid var(--border);flex-shrink:0;}
+.ob-back{width:100%;background:none;border:none;color:var(--muted);font-family:inherit;font-size:0.82rem;cursor:pointer;padding:8px;transition:color 0.15s;border-radius:99px;letter-spacing:0.01em;}
 .ob-back:hover{color:var(--primary);}
 
 /* ── DASHBOARD ── */
@@ -1268,14 +1268,18 @@ input[type=range].colored-slider::-moz-range-thumb{
 <!-- ONBOARDING -->
 <div class="app-shell" id="onboard-shell">
   <div class="page active" id="page-onboard">
-    <div class="ob-progress" id="ob-progress"></div>
-    <div class="ob-icon" id="ob-icon">💙</div>
-    <div class="ob-title" id="ob-title">Welcome to THRIVE</div>
-    <div class="ob-sub" id="ob-sub">AI-powered habits, personalized for you.</div>
-    <div class="ob-body" id="ob-body"></div>
-    <div class="ob-footer">
-      <button class="btn btn-primary" id="ob-next-btn" onclick="obNext()">Continue</button>
-      <button class="ob-back" id="ob-back-btn" onclick="obBack()" style="display:none;">← Back</button>
+    <div style="flex:1;overflow-y:auto;padding:0;display:flex;flex-direction:column;" id="ob-scroll-container">
+      <div style="padding:32px 22px 0;">
+        <div class="ob-progress" id="ob-progress"></div>
+        <div class="ob-icon" id="ob-icon">💙</div>
+        <div class="ob-title" id="ob-title">Welcome to THRIVE</div>
+        <div class="ob-sub" id="ob-sub">AI-powered habits, personalized for you.</div>
+      </div>
+      <div class="ob-body" id="ob-body" style="padding:20px 22px 32px;"></div>
+    </div>
+    <div class="ob-footer" style="position:relative;margin-top:0;padding:12px 22px 32px;">
+      <button class="btn btn-primary" id="ob-next-btn" onclick="obNext()" style="width:100%;">Continue</button>
+      <button class="ob-back" id="ob-back-btn" onclick="obBack()" style="display:none;width:100%;margin-top:12px;">← Back</button>
     </div>
   </div>
 </div>
@@ -1684,17 +1688,18 @@ input[type=range].colored-slider::-moz-range-thumb{
     <div style="padding:12px 0;">
       <div style="font-size:0.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Quick Add</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
-        <button onclick="addWaterAndClose(8)" style="padding:11px;border-radius:11px;border:1.5px solid var(--primary);background:var(--primary-glow);color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;">8 oz</button>
-        <button onclick="addWaterAndClose(16)" style="padding:11px;border-radius:11px;border:1.5px solid var(--primary);background:var(--primary);color:#fff;font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;">16 oz</button>
-        <button onclick="addWaterAndClose(24)" style="padding:11px;border-radius:11px;border:1.5px solid var(--primary);background:var(--primary-glow);color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;">24 oz</button>
-        <button onclick="addWaterAndClose(32)" style="padding:11px;border-radius:11px;border:1.5px solid var(--primary);background:var(--primary-glow);color:var(--primary);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.15s;">32 oz</button>
+        <button onclick="selectWaterAmount(8,this)" data-amount="8" style="padding:11px;border-radius:11px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.2s;">8 oz</button>
+        <button onclick="selectWaterAmount(16,this)" data-amount="16" style="padding:11px;border-radius:11px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.2s;">16 oz</button>
+        <button onclick="selectWaterAmount(24,this)" data-amount="24" style="padding:11px;border-radius:11px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.2s;">24 oz</button>
+        <button onclick="selectWaterAmount(32,this)" data-amount="32" style="padding:11px;border-radius:11px;border:1.5px solid var(--border);background:var(--surface);color:var(--text);font-weight:700;font-size:0.85rem;cursor:pointer;transition:all 0.2s;">32 oz</button>
       </div>
+      <button id="water-quick-add-btn" onclick="addWaterSelected()" style="width:100%;padding:12px;border-radius:11px;border:none;background:var(--primary);color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;transition:all 0.2s;display:none;">Add Selected</button>
     </div>
 
     <div style="padding-top:8px;border-top:1px solid var(--border);">
       <div style="font-size:0.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;margin-top:8px;">Custom Amount</div>
       <div style="display:flex;gap:8px;">
-        <input type="number" id="water-custom-input" min="0" placeholder="oz" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:10px;font-size:0.9rem;font-family:inherit;" />
+        <input type="number" id="water-custom-input" min="0" placeholder="oz" style="flex:1;padding:10px;border:1.5px solid var(--border);border-radius:10px;font-size:0.9rem;font-family:inherit;-moz-appearance:textfield;" />
         <button onclick="addWaterCustom()" style="padding:10px 16px;border-radius:10px;border:none;background:var(--primary);color:#fff;font-weight:700;cursor:pointer;transition:all 0.15s;">Add</button>
       </div>
     </div>
@@ -1950,11 +1955,11 @@ const OB_STEPS=[
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
           <div>
             <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Age</label>
-            <input type="number" value="${obData.age||''}" placeholder="30" min="1" max="120" oninput="obData.age=this.value" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;"/>
+            <input type="number" value="${obData.age||''}" placeholder="30" min="1" max="120" oninput="obData.age=this.value" step="1" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;-moz-appearance:textfield;"/>
           </div>
           <div>
             <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Weight (${obData.unit==='metric'?'kg':'lbs'})</label>
-            <input type="number" value="${obData.weight||''}" placeholder="${obData.unit==='metric'?'75':'165'}" min="1" oninput="obData.weight=this.value" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;"/>
+            <input type="number" value="${obData.weight||''}" placeholder="${obData.unit==='metric'?'75':'165'}" min="1" oninput="obData.weight=this.value" step="0.5" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;-moz-appearance:textfield;"/>
           </div>
         </div>
 
@@ -1963,17 +1968,17 @@ const OB_STEPS=[
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
           <div>
             <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Height (ft)</label>
-            <input type="number" value="${obData.heightFt||''}" placeholder="5" min="0" max="8" oninput="obData.heightFt=this.value" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;"/>
+            <input type="number" value="${obData.heightFt||''}" placeholder="5" min="0" max="8" oninput="obData.heightFt=this.value" step="1" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;-moz-appearance:textfield;"/>
           </div>
           <div>
             <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Inches</label>
-            <input type="number" value="${obData.heightIn||''}" placeholder="10" min="0" max="11" oninput="obData.heightIn=this.value" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;"/>
+            <input type="number" value="${obData.heightIn||''}" placeholder="10" min="0" max="11" oninput="obData.heightIn=this.value" step="1" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;-moz-appearance:textfield;"/>
           </div>
         </div>
         `:`
         <div>
           <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Height (cm)</label>
-          <input type="number" value="${obData.heightCm||''}" placeholder="175" min="1" oninput="obData.heightCm=this.value" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;"/>
+          <input type="number" value="${obData.heightCm||''}" placeholder="175" min="1" oninput="obData.heightCm=this.value" step="1" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;-moz-appearance:textfield;"/>
         </div>
         `}
       </div>
@@ -2010,7 +2015,7 @@ const OB_STEPS=[
       .activity-card.selected { box-shadow: 0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.2); }
     </style>
   `},
-  {icon:'🎯',title:'Goals & Fasting',sub:"Choose your goals and fasting. You can update both anytime in Profile settings.",canNext:()=>obData.goals.length>0,render:()=>`
+  {icon:'🎯',title:'Goals & Fasting',sub:"Choose your goals and fasting. You can update both anytime in Profile settings.",canNext:()=>obData.goals.length>0 && obData.fastingSchedule,render:()=>`
     <div style="padding-bottom:120px;">
       <!-- GOALS SECTION -->
       <div style="margin-bottom:28px;">
@@ -2037,7 +2042,7 @@ const OB_STEPS=[
 
         <!-- FASTING PRESET BUTTONS -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
-          ${['16:8','18:6','20:4','None'].map(schedule=>`
+          ${['None','16:8','18:6','20:4'].map(schedule=>`
             <button onclick="obSetFasting('${schedule}')" style="border:1.5px solid ${obData.fastingSchedule===schedule?'#1D9E75':'var(--border)'};background:${obData.fastingSchedule===schedule?'#C3F0DD':'var(--surface)'};border-radius:9px;padding:12px;cursor:pointer;transition:all 0.2s;text-align:center;font-weight:600;font-size:0.9rem;color:${obData.fastingSchedule===schedule?'#0F6E56':'var(--text)'};box-shadow:${obData.fastingSchedule===schedule?'0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.2)':'none'};">${schedule}</button>
           `).join('')}
         </div>
@@ -2222,6 +2227,11 @@ function obUpdateChallengeCounter(){
 }
 function renderObStep(){
   const s=OB_STEPS[obStep];
+  // Scroll to top
+  const scrollContainer=document.getElementById('ob-scroll-container');
+  if(scrollContainer) scrollContainer.scrollTop=0;
+  // Update progress bar
+  document.getElementById('ob-progress').innerHTML=`<div style="font-size:0.8rem;font-weight:600;color:var(--muted);">Step ${obStep+1} of ${OB_STEPS.length}</div><div style="height:3px;background:linear-gradient(90deg,var(--primary) 0%,var(--primary) ${Math.round((obStep+1)/OB_STEPS.length*100)}%,var(--surface3) ${Math.round((obStep+1)/OB_STEPS.length*100)}%,var(--surface3) 100%);border-radius:99px;margin-top:8px;"></div>`;
   document.getElementById('ob-icon').textContent=s.icon;
   document.getElementById('ob-title').textContent=s.title;
   document.getElementById('ob-sub').textContent=s.sub;
@@ -2561,10 +2571,33 @@ function openWaterLogSheet(){
 function closeWaterLogSheet(){
   document.getElementById('water-log-sheet').classList.remove('show');
 }
+let selectedWaterAmount=null;
+function selectWaterAmount(oz,btn){
+  selectedWaterAmount=oz;
+  // Deselect all buttons
+  document.querySelectorAll('[data-amount]').forEach(b=>{
+    b.style.borderColor='var(--border)';
+    b.style.background='var(--surface)';
+    b.style.color='var(--text)';
+  });
+  // Highlight selected button
+  btn.style.borderColor='var(--primary)';
+  btn.style.background='var(--primary)';
+  btn.style.color='#fff';
+  // Show the "Add Selected" button
+  document.getElementById('water-quick-add-btn').style.display='block';
+}
+function addWaterSelected(){
+  if(!selectedWaterAmount) return;
+  addWater(selectedWaterAmount);
+  selectedWaterAmount=null;
+  closeWaterLogSheet();
+}
 function addWaterAndClose(oz){
   addWater(oz);
   closeWaterLogSheet();
 }
+
 function addWaterCustom(){
   const inp=document.getElementById('water-custom-input');
   const val=parseFloat(inp.value)||0;
