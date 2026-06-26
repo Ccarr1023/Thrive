@@ -86,6 +86,7 @@ body{
   font-family:'Outfit',system-ui,sans-serif;
   background:var(--bg);
   color:var(--text);
+  font-size:17px;
   display:flex;flex-direction:column;
   max-width:430px;margin:0 auto;
   position:relative;
@@ -385,14 +386,14 @@ body{
 .medical-card .mc-text{font-size:0.71rem;color:var(--muted);line-height:1.5;}
 
 /* ── ONBOARDING ── */
-#page-onboard{padding:32px 22px 32px;background:var(--bg-grad);overflow:hidden;display:flex;flex-direction:column;height:100%;}
+#page-onboard{padding:32px 22px 32px;background:var(--bg-grad);overflow:hidden;display:flex;flex-direction:column;}
 .ob-progress{display:flex;gap:5px;margin-bottom:28px;}
 .ob-prog-dot{flex:1;height:3px;border-radius:99px;background:var(--surface3);transition:background 0.35s;}
 .ob-prog-dot.done{background:var(--primary);}
 .ob-icon{font-size:2.8rem;margin-bottom:14px;display:block;}
 .ob-title{font-weight:800;font-size:1.6rem;margin-bottom:8px;letter-spacing:-0.025em;line-height:1.15;color:var(--text);}
 .ob-sub{color:var(--muted);font-size:0.85rem;margin-bottom:20px;line-height:1.55;}
-.ob-body{flex:1;overflow:hidden;}
+.ob-body{flex:1;overflow-y:auto;min-height:0;}
 .ob-footer{margin-top:auto;position:relative;bottom:auto;background:transparent;padding:12px 0;z-index:10;}
 .ob-back{width:100%;background:none;border:none;color:var(--muted);font-family:inherit;font-size:0.82rem;cursor:pointer;margin-top:12px;padding:8px;transition:color 0.15s;border-radius:99px;letter-spacing:0.01em;}
 .ob-back:hover{color:var(--primary);}
@@ -3316,7 +3317,7 @@ function renderCoachEngine(){
   const nowMin2=now2.getHours()*60+now2.getMinutes();
   const inWin2=nowMin2>=sh*60+sm&&nowMin2<=eh*60+em;
   
-  setText('sig-fasting', inWin2?('Eating window open. Closes at '+fmt12(p.eatEnd)+'.'):'Fasting in progress ('+fsched+'). '+s.fasting+'% complete.');
+  setText('sig-fasting', inWin2?('Eating window open. Closes at '+fmt12(p.eatEnd)+'.'):'Fasting in progress ('+p.fastingSchedule+'). '+s.fasting+'% complete.');
 
   // ── Weekly snapshot (Coach tab) ──
   const snapEl=document.getElementById('coach-weekly-snapshot');
@@ -3539,6 +3540,7 @@ function generateSummary(){
 }
 function ciTab(tab){ ciActiveTab=tab; document.getElementById('ci-tab-log').classList.toggle('active',tab==='log'); document.getElementById('ci-tab-hist').classList.toggle('active',tab==='hist'); document.getElementById('checkin-log-panel').style.display=tab==='log'?'block':'none'; document.getElementById('checkin-hist-panel').style.display=tab==='hist'?'block':'none'; if(tab==='hist') renderCheckinHist(); }
 var ciForm={weight:'',energy:5,hunger:5,consistency:3};
+var ciActiveTab='log';
 function renderCheckinLog(){
   const p=getProfile(); if(!p) return;
   document.getElementById('checkin-sub').textContent=`Week ${p.currentWeek} · A quick reflection to close your week`;
@@ -4086,12 +4088,12 @@ function renderSettings(tab){
       </div>
       <div style="border-top:1px solid var(--border);margin-top:12px;padding-top:14px;">
         <div class="card-label">Add new item</div>
-        <div class="field"><label>Name</label><input type="text" id="med-name" placeholder="e.g. Metformin, Vitamin D" onchange="updateMedPlaceholder()"/></div>
+        <div class="field"><label>Name</label><input type="text" id="med-name" placeholder="e.g. Metformin, Vitamin D" list="common-meds" onchange="updateMedPlaceholder()"/><datalist id="common-meds"><option value="Metformin"><option value="Vitamin D"><option value="Vitamin B12"><option value="Ibuprofen"><option value="Acetaminophen"><option value="Aspirin"><option value="Atorvastatin"><option value="Lisinopril"><option value="Omeprazole"><option value="Sertraline"><option value="Levothyroxine"><option value="Magnesium"><option value="Iron"><option value="Calcium"><option value="Fish Oil"><option value="Turmeric"><option value="CoQ10"><option value="Melatonin"><option value="Probiotics"></datalist></div>
         <div class="field"><label>Type</label><select id="med-type" onchange="updateMedPlaceholder()"><option value="medication">💊 Medication</option><option value="supplement">🌿 Supplement</option><option value="vitamin">☀️ Vitamin</option></select></div>
         <div class="field"><label>Dose</label><input type="text" id="med-dose" placeholder="e.g. 500mg, 1000 IU"/></div>
         <div class="field-row field-row-2">
           <div class="field"><label>Reminder time</label><input type="time" id="med-time" value="08:00"/></div>
-          <div class="field"><label>Frequency</label><select id="med-frequency"><option value="daily">Daily</option><option value="weekdays">Weekdays</option><option value="custom">Custom</option></select></div>
+          <div class="field"><label>Frequency</label><select id="med-frequency"><option value="daily">Daily</option><option value="twice-daily">Twice Daily</option><option value="morning-evening">Morning & Evening</option><option value="three-times">3x Daily</option><option value="weekdays">Weekdays</option><option value="as-needed">As Needed</option><option value="custom">Custom</option></select></div>
         </div>
         <button class="btn btn-primary" onclick="addMed()" style="margin-bottom:8px;">➕ Add Item</button>
       </div>
