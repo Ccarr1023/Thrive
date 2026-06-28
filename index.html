@@ -7,16 +7,8 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"/>
 <title>THRIVE: Every Small Action Counts</title>
 <style>
-/* ═══════════════════════════════════════
-   THRIVE — BRAND REDESIGN
-   Font: OUTFIT
-   Colors: Blue #1A73FF, Cyan #53D2FF, Navy #08111F
-   Light: crisp white, blue accents
-   Dark: navy background, elevated surfaces
-═══════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-/* ── LIGHT TOKENS — Premium 2026 Liquid Glass ── */
 :root{
   --bg:#f8f9fb;
   --bg-grad:linear-gradient(160deg,#fafbfd 0%,#f8f9fb 60%,#f5f7fa 100%);
@@ -51,7 +43,6 @@
   --hero-grad2:linear-gradient(135deg,#08111F 0%,#1A73FF 100%);
 }
 
-/* ── DARK TOKENS — Premium 2026 Liquid Glass ── */
 [data-theme="dark"]{
   --bg:#0a0d14;
   --bg-grad:linear-gradient(160deg,#0d1018 0%,#0a0d14 60%,#070a10 100%);
@@ -81,7 +72,6 @@
   --hero-grad2:linear-gradient(135deg,#08111F 0%,#1a2a4a 100%);
 }
 
-/* ── BASE ── */
 html,body{height:100%;overflow:hidden;scrollbar-gutter:stable;}
 body{
   font-family:'Outfit',system-ui,sans-serif;
@@ -107,7 +97,6 @@ body{
 .page.active{display:flex;}
 ::-webkit-scrollbar{width:0;}
 
-/* ── DISCLAIMER ── */
 .disc-overlay{position:fixed;inset:0;background:rgba(8,17,31,0.7);z-index:900;display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(12px);}
 .disc-popup{
   background:var(--surface);border-radius:26px;padding:24px 22px 22px;
@@ -128,7 +117,6 @@ body{
 }
 .disc-ok-btn:active{transform:scale(0.97);}
 
-/* ── TOPBAR ── */
 .topbar{
   position:sticky;
   top:0;
@@ -180,7 +168,6 @@ body{
 .theme-toggle:hover{background:var(--primary);border-color:var(--primary);}
 .theme-toggle:active{transform:scale(0.9);}
 
-/* ── TABBAR — Floating pill island ── */
 .tabbar{
   position:fixed;
   bottom:16px;
@@ -236,7 +223,6 @@ body{
 .tab-btn:active{transform:scale(0.92);}
 .tab-btn:active .t-ico{transform:scale(0.9);}
 
-/* ── SHARED COMPONENTS ── */
 .section-title{font-weight:800;font-size:1.4rem;letter-spacing:-0.025em;margin-bottom:4px;color:var(--text);}
 .section-sub{color:var(--muted);font-size:0.79rem;margin-bottom:16px;line-height:1.5;}
 
@@ -251,7 +237,7 @@ body{
   transition:background 0.3s,border-color 0.3s,box-shadow 0.2s;
 }
 
-[data-theme="dark"] 
+[data-theme="dark"]
 .btn::after{
   content:'';position:absolute;inset:0;
   background:rgba(255,255,255,0);
@@ -303,14 +289,11 @@ body{
 
 .btn:disabled{opacity:0.36;cursor:not-allowed;box-shadow:none;filter:none;transform:none;}
 
-/* Button row — asymmetric for primary/secondary pairing */
 .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px;}
 .btn-row .btn:last-child:not(.btn-ghost){grid-column:span 1;}
 
-/* Small utility button variant */
 .btn-sm{padding:9px 18px;font-size:0.82rem;border-radius:99px;}
 
-/* Fields */
 .field{margin-bottom:11px;}
 .field label{display:block;font-size:0.66rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:5px;}
 .field input,.field select,.field textarea{
@@ -329,7 +312,6 @@ body{
 .field-row-2{grid-template-columns:1fr 1fr;}
 .field-row-3{grid-template-columns:1fr 1fr 1fr;}
 
-/* Pills */
 .pill-group{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px;}
 .pill{
   padding:5px 13px;border-radius:99px;
@@ -342,7 +324,6 @@ body{
 .pill.sel-accent{border-color:var(--accent);background:rgba(14,165,233,0.10);color:var(--accent);}
 .pill.sel-green{border-color:var(--green);background:var(--green-bg);color:var(--green);}
 
-/* Medical card */
 .medical-card{
   background:var(--primary-glow2);
   border:1px solid var(--border2);border-radius:var(--radius-sm);
@@ -353,7 +334,6 @@ body{
 .medical-card .mc-title{font-size:0.76rem;font-weight:700;color:var(--primary);margin-bottom:2px;}
 .medical-card .mc-text{font-size:0.71rem;color:var(--muted);line-height:1.5;}
 
-/* ── ONBOARDING ── */
 #page-onboard{background:var(--bg-grad);overflow:hidden;display:flex;flex-direction:column;}
 .ob-progress{display:flex;gap:5px;margin-bottom:28px;}
 .ob-prog-dot{flex:1;height:3px;border-radius:99px;background:var(--surface3);transition:background 0.35s;}
@@ -366,11 +346,9 @@ body{
 .ob-back{width:100%;background:none;border:none;color:var(--muted);font-family:inherit;font-size:0.82rem;cursor:pointer;padding:8px;transition:color 0.15s;border-radius:99px;letter-spacing:0.01em;}
 .ob-back:hover{color:var(--primary);}
 
-/* ── DASHBOARD ── */
 .dash-greeting{margin-bottom:10px;}
 .greeting-insight{font-size:0.75rem;color:var(--green);font-weight:700;opacity:0.9;}
 
-/* Daily Progress Summary */
 .daily-progress-summary{
   display:flex;align-items:center;gap:14px;
   background:var(--surface);border:1px solid var(--border);border-radius:16px;
@@ -385,7 +363,6 @@ body{
 .dash-greeting .greeting-time{color:var(--muted);font-size:0.7rem;font-weight:600;margin-bottom:3px;letter-spacing:0.01em;}
 .dash-greeting h1{font-weight:800;font-size:1.35rem;letter-spacing:-0.025em;color:var(--text);}
 
-/* Hero card — gradient banner, redesigned for full info visibility */
 .hero-rings-card{
   background:var(--hero-grad);
   border-radius:22px;
@@ -407,11 +384,11 @@ body{
   background:rgba(255,255,255,0.06);
   pointer-events:none;
 }
-/* Top row: score ring + status text */
+
 .hero-top-row{
   display:flex;align-items:center;gap:16px;
 }
-/* Bottom row: eating window info pills */
+
 .hero-bottom-row{
   display:flex;gap:10px;flex-wrap:wrap;
 }
@@ -431,14 +408,13 @@ body{
 .ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;}
 .ring-pct{font-weight:900;font-size:1.3rem;color:#fff;line-height:1;}
 .ring-lbl{font-size:0.52rem;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.06em;}
-/* Keep legacy classes for fasting ring text outside hero */
+
 .fast-info{flex:1;z-index:1;}
 .fast-label{font-size:0.62rem;font-weight:700;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:2px;}
 .fast-window{font-weight:800;font-size:1.05rem;color:#fff;}
 .fast-meta{font-size:0.7rem;color:rgba(255,255,255,0.72);margin-top:4px;}
 .fast-sched-lbl{font-weight:700;font-size:0.87rem;color:rgba(255,255,255,0.9);margin-top:2px;}
 
-/* Fasting ring widget */
 .fasting-ring-widget{
   display:flex;align-items:center;gap:13px;
   padding:14px 15px;
@@ -457,7 +433,6 @@ body{
 .fasting-ring-badge.open{background:var(--green-bg);color:var(--green);}
 .fasting-ring-badge.fasting{background:var(--primary-glow);color:var(--primary);}
 
-/* Water bar */
 .water-bar{
   display:flex;align-items:center;gap:10px;
   background:linear-gradient(135deg,rgba(14,165,233,0.07),rgba(56,189,248,0.04));
@@ -483,7 +458,6 @@ body{
 .water-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 16px rgba(14,165,233,0.35);transform:translateY(-1px);}
 .water-btn:active{transform:scale(0.93);}
 
-/* Week strip */
 .week-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:10px;margin-top:2px;}
 .week-day{
   background:var(--surface);border-radius:11px;
@@ -502,7 +476,6 @@ body{
 .week-day .wd-dot{width:4px;height:4px;border-radius:50%;background:var(--green);margin:3px auto 0;opacity:0;transition:opacity 0.2s;}
 .week-day.logged .wd-dot{opacity:1;}
 
-/* Macro grid */
 .macro-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
 .macro-card{
   background:var(--surface);border:1px solid var(--border);
@@ -525,7 +498,6 @@ body{
 .macro-check{position:absolute;top:7px;right:8px;font-size:0.76rem;opacity:0;transition:opacity 0.3s;}
 .macro-card.goal-met .macro-check{opacity:1;}
 
-/* Steps widget */
 .steps-widget{
   display:flex;align-items:center;gap:14px;cursor:pointer;
   padding:14px 15px;
@@ -541,7 +513,6 @@ body{
 .steps-val{font-weight:800;font-size:1.5rem;color:var(--text);line-height:1;}
 .steps-goal-txt{font-size:0.68rem;color:var(--muted);margin-top:2px;}
 
-/* ── MODALS ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:400;align-items:flex-end;justify-content:center;backdrop-filter:blur(4px);}
 .modal-overlay.show{display:flex;}
 .modal-sheet{
@@ -557,15 +528,10 @@ body{
 .modal-handle{width:40px;height:4px;border-radius:99px;background:var(--surface3);margin:12px auto 20px;}
 .modal-title{font-weight:800;font-size:1rem;margin-bottom:16px;color:var(--text);}
 
-/* ── CHAT ── */
-/* ── PAGE BACKGROUNDS — clean approach ── */
 #page-today, #page-chat, #page-food, #page-checkin, #page-settings {
   background: var(--bg);
 }
 
-/* ── LIQUID GLASS SETTINGS ── */
-
-/* Ambient background orbs */
 .lg-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
 [data-theme="dark"] #page-settings{background:#0a0d14;}
 [data-theme="light"] #page-settings{background:#f8f9fb;}
@@ -575,7 +541,6 @@ body{
 .lg-orb-3{width:220px;height:220px;top:40%;right:10%;background:radial-gradient(circle,rgba(220,200,170,0.25),transparent);animation-delay:8s;}
 @keyframes lgFloat{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(12px,-16px) scale(1.04);}66%{transform:translate(-8px,10px) scale(0.97);}}
 
-/* Glass card base — used by renderSettings output */
 .lg-card{
   background:rgba(255,255,255,0.55);
   backdrop-filter:blur(24px) saturate(180%);
@@ -594,7 +559,7 @@ body{
   box-shadow:0 8px 32px rgba(0,0,0,0.4),0 1px 0 rgba(255,255,255,0.06) inset;
 }
 
-[data-theme="dark"] 
+[data-theme="dark"]
 .lg-tab svg{opacity:0.6;transition:opacity 0.2s;}
 .lg-tab.active{
   background:rgba(255,255,255,0.9);
@@ -606,7 +571,6 @@ body{
 [data-theme="dark"] .lg-tab.active svg{stroke:#6fa8a0;}
 .lg-tab:not(.active):hover{background:rgba(255,255,255,0.4);color:var(--text);}
 
-/* AI ring — top right ambient accent */
 .ai-ring-wrap{
   position:absolute;top:16px;right:16px;
   display:flex;flex-direction:column;align-items:center;gap:4px;
@@ -634,10 +598,8 @@ body{
 @keyframes ringPulse{0%,100%{box-shadow:0 0 20px rgba(83,210,255,0.2),0 0 40px rgba(26,115,255,0.1);}50%{box-shadow:0 0 28px rgba(83,210,255,0.35),0 0 56px rgba(26,115,255,0.18);}}
 @keyframes dotPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.75);}}
 
-/* Override old settings card style inside liquid glass */
 #page-settings .settings-card{background:transparent;border:none;padding:0;box-shadow:none;}
 
-/* ── SETTINGS TABS — premium pill strip ── */
 .settings-tabs{display:flex;gap:6px;margin-bottom:16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 0;}
 .settings-tabs::-webkit-scrollbar{display:none;}
 .st-tab{
@@ -667,7 +629,6 @@ body{
 .st-tab.active svg{opacity:1;stroke:#fff;}
 .st-tab:not(.active):hover{border-color:var(--primary);color:var(--primary);background:var(--primary-glow);}
 
-/* ── CHECK-IN TABS ── */
 .checkin-tabs{display:flex;gap:8px;margin-bottom:16px;}
 .ci-tab{
   flex:1;
@@ -696,7 +657,6 @@ body{
 .danger-title{color:var(--red);font-weight:700;font-size:0.85rem;margin-bottom:4px;}
 .danger-sub{color:var(--muted);font-size:0.75rem;margin-bottom:10px;line-height:1.5;}
 
-/* ── TOAST ── */
 .toast{
   position:fixed;bottom:92px;left:50%;
   transform:translateX(-50%) translateY(20px);
@@ -709,7 +669,6 @@ body{
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* ── CONFETTI & CELEBRATION ── */
 #confetti-canvas{position:fixed;inset:0;pointer-events:none;z-index:800;max-width:430px;margin:0 auto;left:50%;transform:translateX(-50%);}
 .goal-popup{
   position:fixed;top:50%;left:50%;
@@ -752,15 +711,12 @@ body{
 }
 .goal-popup-btn:hover{transform:translateY(-1px);box-shadow:0 16px 36px rgba(26,115,255,0.38),inset 0 1px 0 rgba(255,255,255,0.3);}
 
-/* ── IMAGE VIEWER ── */
 .img-viewer{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:850;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px);}
 .img-viewer.show{display:flex;}
 .img-viewer img{max-width:100%;max-height:85vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.5);}
 .img-viewer-close{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s;}
 .img-viewer-close:hover{background:rgba(255,255,255,0.22);}
 
-
-/* ── SHARE BADGE MODAL ── */
 .share-modal-sheet{
   background:var(--surface);border-radius:26px 26px 0 0;
   padding:8px 20px 36px;width:100%;max-width:430px;
@@ -780,7 +736,6 @@ body{
 .share-stat-lbl{font-size:0.6rem;color:rgba(255,255,255,0.72);font-weight:600;margin-top:1px;}
 .share-badge-brand{font-size:0.65rem;color:rgba(255,255,255,0.55);letter-spacing:0.06em;font-weight:700;}
 
-/* ── NOTIFICATION PREFS ── */
 .notif-row{
   display:flex;align-items:center;gap:12px;
   padding:13px 0;border-bottom:1px solid var(--border);
@@ -799,7 +754,6 @@ body{
 }
 .ics-btn:hover{border-color:var(--primary);color:var(--primary);background:var(--primary-glow);}
 
-/* ── PAGE ANIMATIONS ── */
 @keyframes floatIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 .page.active>*{animation:floatIn 0.4s cubic-bezier(.22,1,.36,1) both;}
 .page.active>*:nth-child(2){animation-delay:.05s;}
@@ -815,7 +769,7 @@ body{
 .ic-title{font-weight:800;font-size:0.88rem;}
 .ic-badge{margin-left:auto;padding:2px 9px;border-radius:99px;font-size:0.64rem;font-weight:700;white-space:nowrap;}
 .ic-badge.info{background:var(--primary-glow);color:var(--primary);}
-/* ── COACH ENGINE ── */
+
 .coach-priority-card{
   background:var(--hero-grad);
   border-radius:24px;padding:20px 18px 16px;margin-bottom:10px;
@@ -834,7 +788,6 @@ body{
 .coach-quick-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;}
 .coach-insight{font-size:0.80rem;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:10px;position:relative;z-index:1;}
 
-/* HERO RECOMMENDATION CARD — Reduced visual dominance */
 .hero-recommendation-card{
   background:var(--surface);border:1.5px solid var(--primary-glow2);border-radius:18px;
   padding:12px;margin-bottom:10px;box-shadow:var(--shadow-xs);
@@ -885,7 +838,6 @@ body{
 .coach-body{font-size:0.85rem;color:rgba(255,255,255,0.88);line-height:1.65;margin-bottom:14px;position:relative;z-index:1;display:none;}
 .coach-action-box{background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.24);border-radius:14px;padding:12px 14px;font-size:0.8rem;font-weight:600;color:#fff;line-height:1.5;position:relative;z-index:1;min-height:42px;display:none;}
 
-/* THRIVE Score */
 .score-card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-radius:18px;margin-bottom:10px;box-shadow:0 2px 8px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.6);cursor:pointer;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
 .score-card:hover{box-shadow:var(--shadow-md);transform:translateY(-1px);}
 .score-circle{
@@ -910,7 +862,6 @@ body{
 .metric-trend{font-size:0.85rem;font-weight:800;color:var(--green);min-width:28px;text-align:right;background:rgba(16,185,129,0.1);padding:2px 6px;border-radius:6px;display:inline-block;}
 .metric-streak{font-size:0.68rem;font-weight:700;color:var(--amber);background:rgba(245,158,11,0.12);padding:4px 8px;border-radius:8px;display:inline-block;}
 
-/* Metric 2x2 grid */
 .metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;}
 .metric-card{
   background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:10px;
@@ -934,7 +885,6 @@ body{
 .metric-fill.amber{background:linear-gradient(90deg,#d97706,#fbbf24);}
 .metric-fill.green{background:linear-gradient(90deg,#059669,#34d399);}
 
-/* Metric Status Pill */
 .metric-status{
   margin-top:6px;margin-bottom:4px;padding:3px 8px;border-radius:8px;
   font-size:0.65rem;font-weight:700;text-align:center;
@@ -955,7 +905,6 @@ body{
 }
 @keyframes slideIn{from{opacity:0;transform:translateY(-4px);} to{opacity:1;transform:translateY(0);}}
 
-/* Quick Log */
 .quick-log-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:12px;margin-bottom:10px;box-shadow:var(--shadow-xs);}
 .quick-log-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px;}
 .quick-log-grid .wide{grid-column:1/-1;}
@@ -971,14 +920,12 @@ body{
 .ql-btn.primary:hover{box-shadow:0 5px 18px rgba(58,155,127,0.38);}
 .ql-btn:active{transform:scale(0.95);}
 
-/* Coach signals */
 .signal-list{display:grid;gap:8px;}
 .signal-item{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:12px;}
 .signal-icon{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--surface);flex-shrink:0;font-size:1rem;}
 .signal-title{font-weight:700;font-size:0.84rem;color:var(--text);margin-bottom:2px;}
 .signal-body{font-size:0.75rem;color:var(--muted);line-height:1.5;}
 
-/* Recent logs feed */
 .log-feed{display:grid;gap:0;}
 .log-feed-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);}
 .log-feed-item:last-child{border-bottom:none;}
@@ -992,7 +939,6 @@ body{
 .empty-state .es-icon{font-size:2.2rem;margin-bottom:8px;}
 .empty-state p{font-size:0.83rem;line-height:1.55;}
 
-/* Activity Logger */
 .activity-bar{
   display:flex;align-items:center;gap:10px;
   background:linear-gradient(135deg,rgba(58,155,127,0.07),rgba(14,165,233,0.04));
@@ -1025,7 +971,6 @@ body{
 .add-activity-btn:hover{transform:scale(1.08);box-shadow:0 5px 20px rgba(58,155,127,0.44);}
 .add-activity-btn:active{transform:scale(0.93);}
 
-/* Activity picker sheet */
 .act-sport-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;}
 .act-sport-pill{
   padding:7px 14px;border-radius:99px;
@@ -1037,11 +982,6 @@ body{
   border-color:var(--primary);background:var(--primary-glow);color:var(--primary);
 }
 
-
-/* ═══════════════════════════════════════
-   THRIVE CLEAN BASELINE — iOS 27-inspired
-   Single lightweight design layer. No duplicate click handlers.
-═══════════════════════════════════════ */
 :root{
   --ios-bg:linear-gradient(145deg,#fbfcfd 0%,#f5f8fb 52%,#eef5fb 100%);
   --ios-card:rgba(255,255,255,.78);
@@ -1138,11 +1078,6 @@ body{background:var(--ios-bg);}
   .settings-scroll{padding-left:14px;padding-right:14px;}
 }
 
-
-/* ═══════════════════════════════════════
-   CLEAN iOS 27 PASS — targeted components only
-   Keeps logic intact, removes need for stacked hotfixes
-═══════════════════════════════════════ */
 .ios27-action-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 12px;}
 .ios27-cta{min-height:54px;border-radius:24px;border:1.5px solid rgba(83,210,255,.46);font-family:inherit;font-weight:900;font-size:.92rem;letter-spacing:-.01em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 16px 34px rgba(26,115,255,.18),inset 0 1px 0 rgba(255,255,255,.34);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .ios27-cta:active{transform:scale(.98);}
@@ -1212,8 +1147,6 @@ body{background:var(--ios-bg);}
   .food-picker-grid{grid-template-columns:repeat(3,1fr);}
 }
 
-
-/* ── CLEAN HOME METRIC INPUT SHEETS ── */
 .metric-input-sheet .modal-sheet{border-radius:30px 30px 0 0;padding:10px 20px 34px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(246,249,253,.94));backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);}
 .metric-sheet-head{display:flex;align-items:center;gap:12px;margin:8px 0 16px;}
 .metric-sheet-icon{width:48px;height:48px;border-radius:18px;background:linear-gradient(135deg,#1A73FF,#53D2FF);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.45rem;box-shadow:0 10px 26px rgba(26,115,255,.22);}
@@ -1233,8 +1166,6 @@ body{background:var(--ios-bg);}
 .metric-sheet-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .metric-sheet-actions .btn{border-radius:18px;padding:13px 12px;}
 
-
-/* Reliable metric sheet controls */
 .metric-input-sheet{z-index:720 !important;}
 .metric-input-sheet.show{display:flex !important;}
 .metric-sheet-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 12px;}
@@ -1245,8 +1176,6 @@ body{background:var(--ios-bg);}
 .metric-input-sheet input{background:rgba(255,255,255,.84) !important;border-radius:16px !important;min-height:48px;font-weight:800;color:var(--text);}
 .metric-card[data-metric-action]{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
 
-
-/* CLEAN FIX: Settings/Explore 3x2 pills and reliable tap targets */
 .ios27-pill-strip.thrive-grid-pills,
 .settings-pill-strip{
   display:grid !important;
@@ -1293,8 +1222,6 @@ body{background:var(--ios-bg);}
   .ios27-pill-strip.thrive-grid-pills .ios27-pill,.settings-pill-strip .settings-pill,#page-settings .settings-pill{height:35px !important;font-size:.66rem !important;padding:0 6px !important;}
 }
 
-
-/* iOS 27 Goals cleanup - compact, modern, no large spacer */
 .goals-clean-wrap{padding:0 2px 18px;display:flex;flex-direction:column;gap:12px;}
 .goals-clean-card{background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(246,248,252,.86));border:1px solid rgba(26,115,255,.10);box-shadow:0 12px 32px rgba(8,17,31,.06),inset 0 1px 0 rgba(255,255,255,.85);border-radius:24px;padding:14px;backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);}
 [data-theme="dark"] .goals-clean-card{background:linear-gradient(180deg,rgba(20,25,40,.72),rgba(15,18,28,.62));border-color:rgba(255,255,255,.08);box-shadow:0 12px 34px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.06);}
@@ -1328,8 +1255,6 @@ body{background:var(--ios-bg);}
 .goals-danger-btn{background:rgba(220,38,38,.08);color:var(--red);border:1px solid rgba(220,38,38,.18);box-shadow:none;margin-top:0;}
 @media(max-width:380px){.goals-picker-grid{gap:7px}.ios27-choice{font-size:.71rem;padding:8px 7px}.goals-action-row{grid-template-columns:1fr}.goals-clean-card{border-radius:22px;padding:13px}}
 
-
-/* Final Goals display correction - clean stacked iOS cards */
 #page-settings .goals-clean-wrap{
   padding:2px 0 18px !important;
   gap:14px !important;
@@ -1461,8 +1386,6 @@ body{background:var(--ios-bg);}
   #page-settings .goals-share-btn,#page-settings .goals-save-btn,#page-settings .goals-danger-btn{min-height:52px !important;font-size:.82rem !important;border-radius:18px !important;}
 }
 
-
-/* Goals v2 compact final: scoped, lighter, no oversized blank space */
 #page-settings .goals-v2-wrap{display:flex;flex-direction:column;gap:12px;padding:0 0 16px;margin:0;}
 #page-settings .goals-v2-card{position:relative;width:100%;border-radius:24px;padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(247,250,255,.88));border:1px solid rgba(26,115,255,.14);box-shadow:0 12px 30px rgba(8,17,31,.065),inset 0 1px 0 rgba(255,255,255,.82);overflow:visible;min-height:unset;}
 #page-settings .goals-v2-card.goals-v2-green{border-color:rgba(5,150,105,.16);}
@@ -1500,8 +1423,6 @@ body{background:var(--ios-bg);}
 @media(max-width:430px){#page-settings .goals-v2-card{padding:14px;border-radius:22px;}#page-settings .goals-v2-head{gap:10px;margin-bottom:10px;}#page-settings .goals-v2-kicker{font-size:.62rem;letter-spacing:.12em;}#page-settings .goals-v2-head h3{font-size:1rem;}#page-settings .goals-v2-edit{height:36px;min-width:60px;font-size:.74rem;}#page-settings .goals-v2-chip{font-size:.76rem;min-height:34px;padding:7px 8px 7px 11px;}#page-settings .goals-v2-empty{font-size:.76rem;padding:11px 12px;}#page-settings .goals-v2-actions{grid-template-columns:1fr 1fr;gap:8px;}#page-settings .goals-v2-share,#page-settings .goals-v2-save,#page-settings .goals-v2-danger{min-height:50px;font-size:.78rem;border-radius:17px;}}
 @media(max-width:360px){#page-settings .goals-v2-actions{grid-template-columns:1fr;}#page-settings .goals-v2-picker{grid-template-columns:1fr;}}
 
-
-/* Goals display resolved: balanced content wells without forcing oversized or cramped cards */
 #page-settings .goals-v2-wrap{
   gap:14px !important;
   padding:0 0 18px !important;
@@ -1612,8 +1533,6 @@ body{background:var(--ios-bg);}
   #page-settings .goals-v2-actions{grid-template-columns:1fr 1fr !important;gap:9px !important;}
 }
 
-
-/* 2026 dock + button polish, and stable goals content wells */
 .tabbar{
   height:68px !important;
   max-width:386px !important;
@@ -1689,16 +1608,12 @@ body{background:var(--ios-bg);}
   .tabbar{height:66px !important;bottom:12px !important;width:calc(100% - 24px) !important;}
 }
 
-
-/* Profile goal-style color alignment */
 #page-settings .goals-v2-card.goals-v2-blue{border-color:rgba(26,115,255,.16) !important;}
 #page-settings #conditions-summary{background:rgba(5,150,105,.055) !important;border-color:rgba(5,150,105,.14) !important;}
 #page-settings #sports-summary{background:rgba(26,115,255,.055) !important;border-color:rgba(26,115,255,.15) !important;}
 #page-settings #conditions-summary .goals-v2-empty{color:var(--muted) !important;}
 #page-settings #sports-summary .goals-v2-empty{color:var(--muted) !important;}
 
-
-/* Premium dock refresh — SVG icons, glass island, lighter safe button polish */
 .tabbar.premium-dock{
   height:76px !important;
   max-width:408px !important;
@@ -1819,7 +1734,6 @@ body{background:var(--ios-bg);}
 }
 .tabbar.premium-dock .tab-btn:not(.active):active .t-ico{transform:scale(.94) !important;}
 
-/* Premium tactile buttons without changing app logic */
 button,.btn,.ql-btn,.quick-btn,.coach-action-btn,.hero-primary-btn,.hero-secondary-btn,.settings-pill,.ios27-pill,.goals-v2-edit,.goals-v2-share,.goals-v2-save,.goals-v2-danger,.goals-v2-done{
   -webkit-tap-highlight-color:transparent;
   touch-action:manipulation;
@@ -1839,7 +1753,6 @@ button,.btn,.ql-btn,.quick-btn,.coach-action-btn,.hero-primary-btn,.hero-seconda
   .tabbar.premium-dock .tab-btn .t-lbl{font-size:.51rem !important;}
 }
 
-/* === Consolidated top-level app styles === */
 @keyframes float {
   0%, 100% { transform: translateY(0px) scale(1); }
   50% { transform: translateY(-16px) scale(1.02); }
@@ -1849,7 +1762,6 @@ button,.btn,.ql-btn,.quick-btn,.coach-action-btn,.hero-primary-btn,.hero-seconda
   50% { opacity: 0.9; }
 }
 
-/* ── KID SHELL CSS TOKENS ── */
 :root {
   --kid-bg:#ffffff; --kid-surface:#f0f3f7; --kid-border:#e0e4ed;
   --kid-text:#08111F; --kid-muted:#9BA7BA;
@@ -1877,8 +1789,6 @@ button,.btn,.ql-btn,.quick-btn,.coach-action-btn,.hero-primary-btn,.hero-seconda
     to { transform: translateY(0); opacity: 1; }
   }
 
-
-/* === THRIVE FINAL CLEANUP PASS: secure, light, consistent visual layer === */
 :root{
   --thrive-font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   --glass-strong:rgba(255,255,255,.76);
@@ -1984,11 +1894,8 @@ body.dark .lg-card,body.dark .metric-card,body.dark .food-modern-card,body.dark 
 }
 body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,18,31,.62))!important;border-color:rgba(93,131,188,.38)!important;}
 
-
 .goals-v2-actions-single{grid-template-columns:1fr;}
 
-
-/* Thrive disclaimer readability + artifact cleanup patch v9 */
 #disc-overlay{
   background:rgba(8,17,31,.72) !important;
   backdrop-filter:blur(18px) saturate(130%) !important;
@@ -2020,19 +1927,13 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   border-color:rgba(83,210,255,.14) !important;
 }
 
-
-/* Onboarding controls live inside scroll body so they do not cover content */
 #page-onboard .ob-footer .btn{box-shadow:0 8px 28px rgba(26,115,255,0.20);}
 #page-onboard .ob-footer{flex-shrink:0;}
 
-
-/* v12 onboarding scroll cleanup: remove large blank bottom area */
 #page-onboard .ob-body > div[style*="padding-bottom:120px"]{padding-bottom:18px!important;}
 #page-onboard .ob-footer{margin-top:10px!important;padding-bottom:22px!important;}
 #page-onboard .ob-footer:empty{display:none!important;}
 
-
-/* v14 brand logo rollout */
 .thrive-logo-img{display:block;width:auto;height:auto;object-fit:contain;}
 .thrive-logo-splash{width:min(72vw,360px);max-height:180px;filter:drop-shadow(0 18px 42px rgba(26,115,255,.22));}
 .thrive-logo-disclaimer{width:150px;max-height:82px;margin:0 auto;}
@@ -2041,15 +1942,12 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
 .topbar-brand{min-width:0;align-items:center;}
 .topbar-brand.brand-image-only{gap:0;}
 [data-theme="dark"] .thrive-logo-topbar,[data-theme="dark"] .thrive-logo-onboard{filter:drop-shadow(0 0 10px rgba(83,210,255,.18));}
-/* v21: dark logo keeps the same CSS footprint as light mode; dark image canvases now match the light logo canvases */
+
 [data-theme="dark"] .thrive-logo-splash{width:min(72vw,360px)!important;max-height:180px!important;}
 [data-theme="dark"] .thrive-logo-disclaimer{width:150px!important;max-height:82px!important;margin:0 auto!important;}
 [data-theme="dark"] .thrive-logo-onboard{width:150px!important;max-height:86px!important;margin:0 0 4px 0!important;}
 [data-theme="dark"] .thrive-logo-topbar{width:auto!important;height:34px!important;max-width:min(48vw,220px)!important;object-fit:contain!important;object-position:left center!important;}
 
-
-
-/* Premium Goals data management: de-emphasize destructive reset action */
 #page-settings .goals-v2-data-card{
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
@@ -2103,9 +2001,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   #page-settings .goals-v2-reset{width:max-content;min-height:36px;font-size:.70rem;}
 }
 
-
-
-/* THRIVE HOTFIX — Coach page scroll clearance */
 .app-shell{min-height:0 !important;}
 .page{min-height:0 !important;max-height:100% !important;-webkit-overflow-scrolling:touch !important;overscroll-behavior-y:contain;}
 #page-chat{overflow-y:auto !important;overflow-x:hidden !important;padding-bottom:190px !important;scroll-padding-bottom:190px !important;}
@@ -2113,8 +2008,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
 #page-chat::after{content:'';display:block;flex:0 0 120px;height:120px;}
 #page-chat .insight-card:last-of-type{margin-bottom:24px !important;}
 
-
-/* THRIVE safe data management + contextual coach refinements */
 .goals-v2-data-safe-gap{height:88px;}
 .goals-v2-data-safe{opacity:.92;}
 .goals-v2-data-safe .goals-v2-reset{min-width:128px;}
@@ -2127,41 +2020,480 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
 .coach-mini-sub.is-good{color:var(--green);font-weight:850;}
 @media(max-width:380px){.goals-v2-data-safe-gap{height:72px}.goals-v2-bottom-safe-space{height:72px}.coach-context-row{padding:9px 10px}.coach-context-copy{font-size:.74rem}}
 
+[data-theme="dark"] body{
+  background:linear-gradient(145deg,#07101d 0%,#08111F 54%,#050a12 100%) !important;
+  color:#f8fbff !important;
+}
+[data-theme="dark"] .topbar{
+  background:rgba(9,16,28,.86) !important;
+  border-bottom-color:rgba(105,167,255,.22) !important;
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset !important;
+}
+[data-theme="dark"] .topbar-week{
+  background:rgba(26,115,255,.20) !important;
+  border-color:rgba(83,210,255,.34) !important;
+  color:#8ec5ff !important;
+}
+[data-theme="dark"] .theme-toggle{
+  background:rgba(20,31,49,.94) !important;
+  border-color:rgba(112,151,205,.34) !important;
+  color:#ffd166 !important;
+}
+[data-theme="dark"] #page-food .food-modern-menu{display:none !important;}
+[data-theme="dark"] #page-food .food-modern-title,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .settings-title{
+  color:#f8fbff !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.28);
+}
+[data-theme="dark"] #page-food .food-modern-subtitle,
+[data-theme="dark"] .section-sub,
+[data-theme="dark"] .settings-subtitle{
+  color:#9fb2d6 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] #page-food .food-modern-card{
+  background:linear-gradient(145deg,rgba(20,31,50,.96),rgba(12,20,34,.90)) !important;
+  border-color:rgba(106,161,239,.36) !important;
+  box-shadow:0 18px 46px rgba(0,0,0,.34),0 0 0 1px rgba(83,210,255,.06) inset,inset 0 1px 0 rgba(255,255,255,.08) !important;
+  color:#f5f8ff !important;
+}
+[data-theme="dark"] #page-food .food-modern-card::before{
+  opacity:.9 !important;
+  background:radial-gradient(circle,var(--accentGlow,rgba(83,210,255,.22)) 0%,rgba(83,210,255,.05) 38%,rgba(255,255,255,0) 72%) !important;
+}
+[data-theme="dark"] #page-food .food-modern-card:hover{
+  box-shadow:0 22px 54px rgba(0,0,0,.42),0 0 0 1px rgba(83,210,255,.12) inset !important;
+}
+[data-theme="dark"] #page-food .food-title{
+  color:#f8fbff !important;
+  opacity:1 !important;
+  text-shadow:0 1px 10px rgba(0,0,0,.22);
+}
+[data-theme="dark"] #page-food .food-sub,
+[data-theme="dark"] #page-food .food-insight-body{
+  color:#adc0e3 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] #page-food .food-progress-label{
+  color:#b8c7e6 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] #page-food .food-goal-chip{
+  background:rgba(235,244,255,.12) !important;
+  border-color:rgba(255,255,255,.14) !important;
+  color:#d9e8ff !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+[data-theme="dark"] #page-food .food-count{
+  color:#ffffff !important;
+  text-shadow:0 1px 7px rgba(0,0,0,.24) !important;
+  box-shadow:0 10px 24px var(--accentGlow,rgba(83,210,255,.24)) !important;
+}
+[data-theme="dark"] #page-food .food-track{
+  background:rgba(148,163,184,.26) !important;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.26) !important;
+}
+[data-theme="dark"] #page-food .food-fill{
+  box-shadow:0 0 14px var(--accentGlow,rgba(83,210,255,.24)) !important;
+}
+[data-theme="dark"] #page-food .food-insight-card{
+  background:linear-gradient(145deg,rgba(16,29,48,.96),rgba(10,20,34,.92)) !important;
+  border-color:rgba(83,210,255,.24) !important;
+  box-shadow:0 16px 42px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+[data-theme="dark"] #page-food .food-insight-title{
+  color:#f8fbff !important;
+}
+[data-theme="dark"] .metric-card,
+[data-theme="dark"] .score-card,
+[data-theme="dark"] .quick-log-card,
+[data-theme="dark"] .insight-card,
+[data-theme="dark"] .daily-progress-summary,
+[data-theme="dark"] .steps-widget,
+[data-theme="dark"] .fasting-ring-widget,
+[data-theme="dark"] .water-bar,
+[data-theme="dark"] .activity-bar,
+[data-theme="dark"] .card{
+  background:linear-gradient(145deg,rgba(18,31,52,.96),rgba(10,18,31,.90)) !important;
+  border-color:rgba(106,161,239,.32) !important;
+  box-shadow:0 16px 42px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.07) !important;
+}
+[data-theme="dark"] .metric-value,
+[data-theme="dark"] .score-status,
+[data-theme="dark"] .steps-val,
+[data-theme="dark"] .fasting-ring-title,
+[data-theme="dark"] .log-feed-name,
+[data-theme="dark"] .ic-title,
+[data-theme="dark"] .metric-current-value{
+  color:#f8fbff !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] .metric-title,
+[data-theme="dark"] .metric-label,
+[data-theme="dark"] .metric-sub,
+[data-theme="dark"] .score-sub,
+[data-theme="dark"] .steps-goal-txt,
+[data-theme="dark"] .fasting-ring-sub,
+[data-theme="dark"] .log-feed-time,
+[data-theme="dark"] .metric-current-label,
+[data-theme="dark"] .card-label,
+[data-theme="dark"] .field label{
+  color:#aebfe0 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] .metric-status{
+  background:rgba(148,163,184,.16) !important;
+  color:#cbd8ef !important;
+}
+[data-theme="dark"] .metric-status.complete,
+[data-theme="dark"] .metric-badge,
+[data-theme="dark"] .metric-trend{
+  background:rgba(16,185,129,.22) !important;
+  color:#71f0c2 !important;
+}
+[data-theme="dark"] .metric-status.almost-there,
+[data-theme="dark"] .metric-status.so-close{
+  background:rgba(251,191,36,.20) !important;
+  color:#ffd166 !important;
+}
+[data-theme="dark"] .metric-emoji,
+[data-theme="dark"] .ic-icon,
+[data-theme="dark"] .log-feed-icon{
+  filter:drop-shadow(0 3px 10px rgba(0,0,0,.30));
+}
+[data-theme="dark"] .metric-progress,
+[data-theme="dark"] .steps-widget .metric-progress,
+[data-theme="dark"] .water-track{
+  background:rgba(148,163,184,.25) !important;
+}
+[data-theme="dark"] .tabbar{
+  background:linear-gradient(145deg,rgba(15,28,48,.94),rgba(8,18,32,.86)) !important;
+  border-color:rgba(83,210,255,.28) !important;
+  box-shadow:0 22px 56px rgba(0,0,0,.48),0 0 0 1px rgba(83,210,255,.08) inset,inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+[data-theme="dark"] .tabbar .tab-btn:not(.active){
+  color:#b9c9e6 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] .tabbar .tab-btn:not(.active) .t-ico{
+  background:rgba(230,240,255,.12) !important;
+  border:1px solid rgba(210,226,255,.16) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 6px 16px rgba(0,0,0,.20) !important;
+}
+[data-theme="dark"] .tabbar .tab-btn:not(.active) .dock-icon{
+  stroke:#d5e2f7 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] .tabbar .tab-btn:not(.active) .t-lbl{
+  color:#aebfe0 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] .tabbar .tab-btn.active{
+  background:linear-gradient(145deg,#0b2a56 0%,#1A73FF 56%,#53D2FF 100%) !important;
+  box-shadow:0 16px 38px rgba(26,115,255,.42),inset 0 1px 1px rgba(255,255,255,.28) !important;
+}
+[data-theme="dark"] .btn-ghost,
+[data-theme="dark"] .ql-btn,
+[data-theme="dark"] .pill,
+[data-theme="dark"] .metric-quick-btn{
+  background:rgba(18,31,52,.82) !important;
+  border-color:rgba(106,161,239,.30) !important;
+  color:#d6e5ff !important;
+}
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea{
+  background:rgba(8,18,32,.86) !important;
+  border-color:rgba(106,161,239,.30) !important;
+  color:#f8fbff !important;
+}
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder{color:#8799bb !important;}
+
+[data-theme="dark"] #page-settings{
+  background:linear-gradient(145deg,#07101d 0%,#08111F 55%,#050a12 100%) !important;
+  color:#f8fbff !important;
+}
+[data-theme="dark"] #page-settings .settings-scroll{
+  background:transparent !important;
+}
+[data-theme="dark"] #page-settings .settings-header{
+  padding-top:2px;
+}
+[data-theme="dark"] #page-settings .settings-title{
+  color:#ffffff !important;
+  text-shadow:0 3px 16px rgba(0,0,0,.38) !important;
+}
+[data-theme="dark"] #page-settings .settings-subtitle{
+  color:#b8c8e8 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] #page-settings .settings-pill-strip{
+  gap:10px !important;
+}
+[data-theme="dark"] #page-settings .settings-pill,
+[data-theme="dark"] #page-settings .ios27-pill{
+  background:linear-gradient(145deg,rgba(24,36,57,.96),rgba(12,21,36,.92)) !important;
+  border:1.5px solid rgba(111,166,244,.40) !important;
+  color:#cfe0ff !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] #page-settings .settings-pill:hover,
+[data-theme="dark"] #page-settings .ios27-pill:hover{
+  border-color:rgba(83,210,255,.66) !important;
+  color:#ffffff !important;
+  transform:translateY(-1px);
+}
+[data-theme="dark"] #page-settings .settings-pill.active,
+[data-theme="dark"] #page-settings .ios27-pill.active{
+  background:linear-gradient(135deg,#0b2a56 0%,#1A73FF 58%,#53D2FF 100%) !important;
+  border-color:rgba(83,210,255,.78) !important;
+  color:#ffffff !important;
+  box-shadow:0 16px 36px rgba(26,115,255,.40), inset 0 1px 0 rgba(255,255,255,.24) !important;
+}
+[data-theme="dark"] #settings-panel .lg-card,
+[data-theme="dark"] #page-settings .lg-card,
+[data-theme="dark"] #page-settings .goals-v2-card,
+[data-theme="dark"] #page-settings .targets-v2-card,
+[data-theme="dark"] #page-settings .fasting-v2-card,
+[data-theme="dark"] #page-settings .meds-v2-card{
+  background:linear-gradient(145deg,rgba(18,31,52,.98),rgba(9,18,32,.94)) !important;
+  border:1px solid rgba(106,161,239,.34) !important;
+  box-shadow:0 18px 48px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  color:#f8fbff !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-card.goals-v2-green{
+  border-color:rgba(16,185,129,.30) !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-card.goals-v2-blue{
+  border-color:rgba(83,210,255,.32) !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-head{
+  border-bottom-color:rgba(122,169,255,.24) !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-kicker,
+[data-theme="dark"] #page-settings .card-label{
+  color:#35e2ac !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-kicker.blue,
+[data-theme="dark"] #page-settings .goals-v2-data-kicker{
+  color:#66c7ff !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-head h3,
+[data-theme="dark"] #page-settings .goals-v2-titleblock h3,
+[data-theme="dark"] #page-settings h3,
+[data-theme="dark"] #page-settings .notif-title,
+[data-theme="dark"] #page-settings .danger-title{
+  color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.24) !important;
+}
+[data-theme="dark"] #page-settings p,
+[data-theme="dark"] #page-settings .notif-sub,
+[data-theme="dark"] #page-settings .danger-sub,
+[data-theme="dark"] #page-settings .goals-v2-empty,
+[data-theme="dark"] #page-settings .goals-v2-data-text,
+[data-theme="dark"] #page-settings .mc-text{
+  color:#b4c6e8 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] #page-settings label,
+[data-theme="dark"] #page-settings .field label,
+[data-theme="dark"] #page-settings .metric-summary-label{
+  color:#93a9d3 !important;
+  opacity:1 !important;
+}
+[data-theme="dark"] #page-settings input,
+[data-theme="dark"] #page-settings select,
+[data-theme="dark"] #page-settings textarea{
+  background:rgba(6,16,30,.92) !important;
+  border:1.5px solid rgba(106,161,239,.34) !important;
+  color:#f8fbff !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+[data-theme="dark"] #page-settings input:disabled,
+[data-theme="dark"] #page-settings select:disabled,
+[data-theme="dark"] #page-settings textarea:disabled{
+  opacity:1 !important;
+  color:#f0f6ff !important;
+  -webkit-text-fill-color:#f0f6ff !important;
+  background:rgba(7,18,34,.76) !important;
+}
+[data-theme="dark"] #page-settings input[readonly]{
+  background:rgba(23,34,52,.86) !important;
+  color:#c7d6f2 !important;
+  -webkit-text-fill-color:#c7d6f2 !important;
+}
+[data-theme="dark"] #page-settings .unit-toggle:not(.selected),
+[data-theme="dark"] #page-settings .goals-v2-choice,
+[data-theme="dark"] #page-settings .fasting-schedule-chip,
+[data-theme="dark"] #page-settings .ics-btn,
+[data-theme="dark"] #page-settings .goals-v2-reset{
+  background:rgba(12,24,42,.92) !important;
+  border-color:rgba(106,161,239,.34) !important;
+  color:#d8e7ff !important;
+  box-shadow:0 8px 20px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+[data-theme="dark"] #page-settings .unit-toggle.selected,
+[data-theme="dark"] #page-settings .goals-v2-choice.selected,
+[data-theme="dark"] #page-settings .fasting-schedule-chip.selected,
+[data-theme="dark"] #page-settings .goals-v2-done,
+[data-theme="dark"] #page-settings .goals-v2-share,
+[data-theme="dark"] #page-settings .goals-v2-save{
+  background:linear-gradient(135deg,#0b2a56 0%,#1A73FF 58%,#53D2FF 100%) !important;
+  border-color:rgba(83,210,255,.70) !important;
+  color:#ffffff !important;
+  box-shadow:0 14px 30px rgba(26,115,255,.34), inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-edit,
+[data-theme="dark"] #page-settings .goals-v2-edit.blue{
+  background:linear-gradient(145deg,rgba(235,244,255,.12),rgba(174,198,235,.10)) !important;
+  border:1.5px solid rgba(117,177,255,.42) !important;
+  color:#bfe0ff !important;
+  box-shadow:0 12px 26px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-edit.done-state,
+[data-theme="dark"] #page-settings #personal-info-edit-btn,
+[data-theme="dark"] #page-settings #meds-edit-btn,
+[data-theme="dark"] #page-settings #targets-edit-btn,
+[data-theme="dark"] #page-settings #fasting-edit-btn{
+  color:#ffffff !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-chip,
+[data-theme="dark"] #page-settings .fasting-v2-bubble{
+  background:rgba(26,115,255,.18) !important;
+  border-color:rgba(83,210,255,.30) !important;
+  color:#e7f2ff !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-chip.is-goal{
+  background:rgba(16,185,129,.18) !important;
+  border-color:rgba(52,211,153,.30) !important;
+  color:#d9fff2 !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-empty,
+[data-theme="dark"] #page-settings .goals-v2-empty.blue,
+[data-theme="dark"] #page-settings #meds-list > p,
+[data-theme="dark"] #page-settings [style*="No health conditions selected"],
+[data-theme="dark"] #page-settings [style*="No activities selected"]{
+  background:rgba(26,115,255,.10) !important;
+  border:1px solid rgba(83,210,255,.24) !important;
+  color:#cfe0ff !important;
+  border-radius:16px !important;
+}
+[data-theme="dark"] #page-settings .medical-card,
+[data-theme="dark"] #page-settings .danger-card{
+  background:linear-gradient(145deg,rgba(14,29,50,.96),rgba(8,19,35,.92)) !important;
+  border:1px solid rgba(106,161,239,.30) !important;
+  box-shadow:0 14px 36px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+[data-theme="dark"] #page-settings .medical-card .mc-title,
+[data-theme="dark"] #page-settings .mc-title{
+  color:#68d7ff !important;
+}
+[data-theme="dark"] #page-settings .notif-row{
+  border-bottom-color:rgba(122,169,255,.20) !important;
+}
+[data-theme="dark"] #page-settings .notif-icon{
+  background:rgba(26,115,255,.18) !important;
+  border:1px solid rgba(83,210,255,.22) !important;
+  color:#ffffff !important;
+}
+[data-theme="dark"] #page-settings [style*="background:var(--surface2)"],
+[data-theme="dark"] #page-settings [style*="background:var(--surface)"]{
+  background:rgba(12,24,42,.90) !important;
+  border-color:rgba(106,161,239,.28) !important;
+}
+[data-theme="dark"] #page-settings strong,
+[data-theme="dark"] #page-settings b{
+  color:#ffffff !important;
+}
+[data-theme="dark"] #page-settings .goals-v2-data-card{
+  background:linear-gradient(145deg,rgba(18,31,52,.92),rgba(10,20,35,.88)) !important;
+  border-color:rgba(106,161,239,.28) !important;
+}
+
+[data-theme="dark"] #page-today .ios27-action-row + div{
+  color:#f8fbff !important;
+}
+[data-theme="dark"] #page-today .ios27-action-row + div > div:first-child{
+  color:#b8c8e8 !important;
+  opacity:1 !important;
+  text-shadow:0 2px 12px rgba(0,0,0,.34) !important;
+}
+[data-theme="dark"] #page-today .ios27-pill-strip.thrive-grid-pills{
+  gap:10px !important;
+}
+[data-theme="dark"] #page-today .explore-pill,
+[data-theme="dark"] #page-today .ios27-pill-strip.thrive-grid-pills .ios27-pill{
+  background:linear-gradient(145deg,rgba(24,36,57,.96),rgba(12,21,36,.92)) !important;
+  border:1.5px solid rgba(111,166,244,.40) !important;
+  color:#cfe0ff !important;
+  box-shadow:0 10px 24px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+[data-theme="dark"] #page-today .explore-pill:hover,
+[data-theme="dark"] #page-today .ios27-pill-strip.thrive-grid-pills .ios27-pill:hover{
+  border-color:rgba(83,210,255,.66) !important;
+  color:#ffffff !important;
+  background:linear-gradient(145deg,rgba(30,46,72,.98),rgba(16,29,48,.94)) !important;
+  transform:translateY(-1px);
+}
+[data-theme="dark"] #page-today .explore-pill:active,
+[data-theme="dark"] #page-today .ios27-pill-strip.thrive-grid-pills .ios27-pill:active{
+  transform:scale(.985);
+}
+[data-theme="dark"] #page-today .ios27-pill-strip.thrive-grid-pills .ios27-pill:focus-visible{
+  outline:3px solid rgba(83,210,255,.45) !important;
+  outline-offset:3px !important;
+}
+[data-theme="dark"] #page-today .ios27-pill-strip.thrive-grid-pills + *,
+[data-theme="dark"] #page-today .ios27-pill-strip.thrive-grid-pills ~ *{
+  color:#9fb2d6 !important;
+}
+[data-theme="dark"] #page-today button[onclick="showDisclaimer()"]{
+  color:#b8c8e8 !important;
+  opacity:.92 !important;
+}
+[data-theme="dark"] #page-today button[onclick="showDisclaimer()"]:hover{
+  color:#ffffff !important;
+  opacity:1 !important;
+}
 </style>
 </head>
 <body>
 
-<!-- SPLASH SCREEN -->
 <div id="splash-screen" style="position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,#08111F 0%,#0f1419 50%,#1a1f2e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.5s ease-out;overflow:hidden;">
-  <!-- Animated background orbs -->
+
   <div style="position:absolute;top:-200px;right:-200px;width:400px;height:400px;background:radial-gradient(circle,rgba(83,210,255,0.15) 0%,transparent 70%);border-radius:50%;animation:pulse 4s ease-in-out infinite;"></div>
   <div style="position:absolute;bottom:-150px;left:-150px;width:300px;height:300px;background:radial-gradient(circle,rgba(26,115,255,0.1) 0%,transparent 70%);border-radius:50%;animation:pulse 5s ease-in-out infinite 1s;"></div>
   <div style="text-align:center;">
-    <!-- THRIVE Brand Logo -->
+
     <div style="display:inline-flex;align-items:center;justify-content:center;padding:18px 22px;border-radius:30px;background:rgba(255,255,255,.94);box-shadow:0 24px 70px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.35) inset;">
       <img class="thrive-logo-img thrive-logo-splash" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-logo-kind="main" alt="THRIVE — Every Small Action Counts"/>
     </div>
   </div>
 </div>
-<!-- DISCLAIMER + PRIVACY NOTICE -->
+
 <div class="disc-overlay" id="disc-overlay" style="display:none;">
   <div class="disc-popup">
 
-    <!-- THRIVE Brand Logo -->
     <div style="text-align:center;padding:4px 0 20px;">
       <img class="thrive-logo-img thrive-logo-disclaimer" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-logo-kind="main" alt="THRIVE — Every Small Action Counts"/>
     </div>
 
-    <!-- Headline -->
     <div style="text-align:center;margin-bottom:22px;">
       <div style="font-size:1.2rem;font-weight:900;color:var(--text);letter-spacing:-0.03em;margin-bottom:6px;">A quick note before you start</div>
       <div style="font-size:0.82rem;color:var(--muted);line-height:1.55;">THRIVE is your personal wellness companion — built to help you build habits, track progress, and feel your best.</div>
     </div>
 
-    <!-- Two pills -->
     <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
 
-      <!-- Privacy -->
       <div style="display:flex;align-items:flex-start;gap:14px;background:var(--surface2);border-radius:16px;padding:14px 16px;">
         <div style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#3a9b7f,#6fa8a0);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;">🔒</div>
         <div>
@@ -2170,7 +2502,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
         </div>
       </div>
 
-      <!-- Wellness note -->
       <div style="display:flex;align-items:flex-start;gap:14px;background:var(--surface2);border-radius:16px;padding:14px 16px;">
         <div style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#f59e0b,#fbbf24);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;">💡</div>
         <div>
@@ -2181,14 +2512,12 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
 
     </div>
 
-    <!-- CTA -->
     <button class="disc-ok-btn" onclick="dismissDisclaimer()">Get Started</button>
     <p style="font-size:0.63rem;color:var(--muted);text-align:center;margin-top:12px;margin-bottom:0;line-height:1.6;opacity:0.75;">By continuing you acknowledge that THRIVE provides general wellness guidance only and that your data remains on your device.</p>
 
   </div>
 </div>
 
-<!-- ONBOARDING -->
 <div class="app-shell" id="onboard-shell">
   <div class="page active" id="page-onboard">
     <div id="ob-scroll-container">
@@ -2207,7 +2536,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </div>
 
-<!-- MAIN APP -->
 <div class="app-shell" id="app-shell" style="display:none;">
 
 <header class="topbar">
@@ -2220,21 +2548,17 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </header>
 
-<!-- TODAY -->
 <section class="page active" id="page-today">
 
-  <!-- Greeting -->
   <div class="dash-greeting" style="margin-bottom:10px;">
     <div class="greeting-time" id="greeting-time"></div>
     <h1 id="greeting-name">Good morning 👋</h1>
-    <!-- Personalized insight below greeting -->
+
     <div class="greeting-insight" id="greeting-insight" style="margin-top:4px;"></div>
   </div>
 
-  <!-- Week strip -->
   <div class="week-strip" id="week-strip"></div>
 
-  <!-- Day detail panel (shown when a week-strip day is tapped) -->
   <div id="day-detail-panel" style="display:none;background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:14px 14px 12px;margin-bottom:10px;box-shadow:var(--shadow);animation:floatIn 0.25s ease both;">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
       <div id="day-detail-title" style="font-weight:800;font-size:0.9rem;color:var(--text);"></div>
@@ -2243,7 +2567,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     <div id="day-detail-content" style="display:grid;grid-template-columns:1fr 1fr;gap:7px;"></div>
   </div>
 
-  <!-- 1. HABITIQ SCORE — Daily context + trends -->
   <div class="score-card" onclick="showTab('chat')">
     <div class="score-circle" id="score-circle" style="--score:0;">
       <div class="score-num" id="score-num">71</div>
@@ -2269,7 +2592,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     <div style="color:var(--muted2);font-size:0.82rem;margin-top:4px;">›</div>
   </div>
 
-  <!-- 2. TODAY'S BEST MOVE — Smart recommendation -->
   <div class="hero-recommendation-card">
     <div class="hero-header">
       <div class="hero-icon" id="hero-icon">🎯</div>
@@ -2279,8 +2601,7 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
       </div>
       <button onclick="renderCoachEngine()" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.9rem;transition:all 0.2s;" title="Refresh recommendation">🔄</button>
     </div>
-    
-    <!-- Recommendation context -->
+
     <div class="hero-context">
       <div class="hero-context-row">
         <span class="hero-context-label">Reward:</span>
@@ -2292,18 +2613,14 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
       </div>
     </div>
 
-    <!-- Coaching insight -->
     <div class="hero-insight" id="hero-insight">Complete this and you'll hit all 4 goals today.</div>
 
-    <!-- Enhanced coaching tips -->
     <div class="hero-coaching-tips">
       <div class="coaching-tip">💡 <strong>Pro tip:</strong> A 15-min walk boosts mood & metabolism</div>
       <div class="coaching-tip">🎯 <strong>Today's win:</strong> You're 600 steps away from your goal</div>
     </div>
   </div>
 
-
-  <!-- METRIC GRID — 4 interactive cards -->
   <div class="metric-grid">
     <div class="metric-card" data-metric-action="water" role="button" tabindex="0" style="cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(58,155,127,0.1);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(26,115,255,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(58,155,127,0.1)';">
       <div class="metric-header">
@@ -2366,8 +2683,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     </div>
   </div>
 
-
-  <!-- 5. MEDS REMINDER -->
   <div id="meds-reminder-card" style="display:none;background:linear-gradient(135deg,rgba(58,155,127,0.07),rgba(58,155,127,0.04));border:1px solid rgba(58,155,127,0.2);border-radius:18px;padding:13px 14px;margin-bottom:10px;">
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
       <span style="font-weight:700;font-size:0.9rem;color:var(--text);">🗓️ Meds, Vitamins & Supplements</span>
@@ -2376,13 +2691,11 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     <div id="meds-list-today"></div>
   </div>
 
-  <!-- 8. ACTION BUTTONS -->
   <div class="ios27-action-row">
     <button class="ios27-cta coach" type="button" onclick="showTab('chat')">💬 Coach Review</button>
     <button class="ios27-cta checkin" type="button" onclick="showTab('checkin')">📋 Check-In</button>
   </div>
 
-  <!-- EXPLORE THRIVE SECTION -->
   <div style="margin-top:18px;margin-bottom:12px;">
     <div style="font-size:0.78rem;font-weight:800;color:var(--muted);margin-bottom:12px;text-align:center;letter-spacing:.02em;">Explore THRIVE</div>
     <div class="ios27-pill-strip thrive-grid-pills" aria-label="Explore THRIVE shortcuts">
@@ -2395,27 +2708,23 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     </div>
   </div>
 
-  <!-- Motivational Message -->
   <div style="text-align:center;margin-bottom:16px;">
     <div style="font-size:0.8rem;color:var(--muted);">Every Small Action Counts</div>
   </div>
 
-  <!-- DISCLAIMER -->
   <button onclick="showDisclaimer()" style="display:block;width:100%;background:none;border:none;color:var(--muted);font-size:0.72rem;cursor:pointer;padding:6px 0 10px;text-align:center;font-family:inherit;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
     🔒 Privacy &amp; wellness notice
   </button>
 </section>
-<!-- COACH PAGE -->
+
 <section class="page" id="page-chat">
   <div class="section-title" style="margin-bottom:4px;">Thrive Coach</div>
   <div class="section-sub" style="margin-bottom:14px;">Simple next steps based on today’s logs.</div>
 
-  <!-- Refresh button -->
   <div style="width:100%;margin-bottom:14px;">
     <button class="ios27-cta refresh" type="button" onclick="renderCoachEngine()">↺ Refresh My Coach Plan</button>
   </div>
 
-  <!-- Priority / next action -->
   <div class="insight-card" style="margin-bottom:10px;">
     <div class="insight-card-header">
       <span class="ic-icon">🎯</span>
@@ -2426,7 +2735,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     <div style="font-size:0.82rem;color:var(--muted);line-height:1.65;" id="coach-priority-body"></div>
   </div>
 
-  <!-- This Week at a Glance -->
   <div class="insight-card" style="margin-bottom:10px;">
     <div class="insight-card-header">
       <span class="ic-icon">📊</span>
@@ -2436,16 +2744,14 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     <div id="coach-weekly-snapshot"></div>
   </div>
 
-  <!-- Progress Trend -->
   <div class="insight-card" style="margin-bottom:10px;">
     <div class="insight-card-header">
       <span class="ic-icon">⚖️</span>
       <span class="ic-title">Progress Trend</span>
     </div>
-    <div id="coach-progress-trend"><div style="font-size:0.82rem;color:var(--muted);">Complete your first weekly check-in to unlock weight, hunger, and energy trend coaching.</div></div>
+    <div id="coach-progress-trend"><div style="font-size:0.82rem;color:var(--muted);">Complete your first weekly check-in to unlock weight, hunger control, and energy trend coaching.</div></div>
   </div>
 
-  <!-- Coaching Signals - Hidden (consolidated into trends dashboard) -->
   <div class="insight-card" style="margin-bottom:10px;display:none;">
     <div class="insight-card-header">
       <span class="ic-icon">📡</span>
@@ -2475,18 +2781,15 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     </div>
   </div>
 
-  <!-- Coach notes -->
   <input type="file" id="chat-photo-input" accept="image/*" capture="environment" style="display:none" onchange="handleChatPhoto(this)"/>
 </section>
 
-<!-- FOOD LOG & PHOTOS -->
 <section class="page" id="page-food">
   <div class="food-modern-header">
     <div>
       <div class="food-modern-title">Food</div>
       <div class="food-modern-subtitle">Today</div>
     </div>
-    <button class="food-modern-menu" type="button" aria-label="More food options">⋯</button>
   </div>
 
   <div class="food-modern-grid">
@@ -2533,7 +2836,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </section>
 
-<!-- CHECK-IN -->
 <section class="page" id="page-checkin">
   <div class="section-title">Weekly Check-In</div>
   <div class="section-sub" id="checkin-sub">Complete each week for an adjusted plan</div>
@@ -2545,17 +2847,15 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   <div id="checkin-hist-panel" style="display:none;"></div>
 </section>
 
-<!-- SETTINGS -->
 <section class="page" id="page-settings" style="padding:0;overflow:hidden;position:relative;">
-  <!-- Scrollable content -->
+
   <div class="settings-scroll">
 
-    <!-- Header -->
     <div class="settings-header">
       <div class="settings-title">My Profile</div>
       <div class="settings-subtitle">Settings &amp; preferences</div>
     </div>
-    <!-- Settings pills: single clean source of truth -->
+
     <div class="settings-pill-strip thrive-grid-pills" role="tablist" aria-label="Settings sections">
       <button type="button" class="settings-pill ios27-pill active" id="st-tab-profile" data-settings-tab="profile" onclick="return openSettingsTab('profile', event)" role="tab" aria-selected="true">Profile</button>
       <button type="button" class="settings-pill ios27-pill" id="st-tab-targets" data-settings-tab="targets" onclick="return openSettingsTab('targets', event)" role="tab" aria-selected="false">Targets</button>
@@ -2565,14 +2865,12 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
       <button type="button" class="settings-pill ios27-pill" id="st-tab-goals" data-settings-tab="goals" onclick="return openSettingsTab('goals', event)" role="tab" aria-selected="false">Goals</button>
     </div>
 
-    <!-- Dynamic panel -->
     <div id="settings-panel"></div>
 
-  </div><!-- /scroll -->
+  </div>
 
 </section>
 
-<!-- TABBAR — 5 tabs now -->
 <nav class="tabbar premium-dock" aria-label="Primary app navigation">
   <button class="tab-btn active" data-tab="today" onclick="showTab('today')" aria-label="Today"><span class="t-ico"><svg class="dock-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 11.2 12 5l7.5 6.2"/><path d="M6.7 10.4v8.1h3.6v-4.7h3.4v4.7h3.6v-8.1"/></svg></span><span class="t-lbl">Today</span></button>
   <button class="tab-btn" data-tab="chat" onclick="showTab('chat')" aria-label="Coach"><span class="t-ico"><svg class="dock-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 6.5c1.55-1.55 3.86-2.42 6.62-2.42 4.57 0 7.76 2.55 7.76 6.22 0 3.64-3.19 6.2-7.76 6.2-.78 0-1.52-.07-2.2-.22l-3.74 2.05.77-3.4c-1.57-1.08-2.47-2.7-2.47-4.63 0-1.43.49-2.73 1.02-3.8Z"/><path d="M8.4 10.3h7.2M8.4 13.1h4.7"/><path class="dock-spark" d="M17.4 3.2l.42 1.04 1.02.42-1.02.42-.42 1.04-.42-1.04-1.02-.42 1.02-.42.42-1.04Z"/></svg></span><span class="t-lbl">Coach</span></button>
@@ -2581,15 +2879,10 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   <button class="tab-btn" data-tab="settings" onclick="showTab('settings')" aria-label="Settings"><span class="t-ico"><svg class="dock-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7.2h14M5 12h14M5 16.8h14"/><circle cx="9" cy="7.2" r="1.9"/><circle cx="15.2" cy="12" r="1.9"/><circle cx="10.8" cy="16.8" r="1.9"/></svg></span><span class="t-lbl">Settings</span></button>
 </nav>
 
-</div><!-- /app-shell -->
+</div>
 
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- KID SHELL — shown when familyRole === 'kid'         -->
-<!-- → NATIVE: this becomes a separate Navigator stack   -->
-<!-- ═══════════════════════════════════════════════════ -->
 <div id="kid-shell" style="display:none;position:fixed;inset:0;background:var(--kid-bg);font-family:'Outfit',sans-serif;display:none;flex-direction:column;overflow:hidden;">
 
-  <!-- KID TOP BAR -->
   <div id="kid-topbar" style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;background:var(--kid-bg);position:relative;z-index:10;">
     <div style="display:flex;align-items:center;gap:10px;">
       <div id="kid-avatar" style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#3a9b7f,#6fa8a0);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">🧒</div>
@@ -2607,13 +2900,10 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     </div>
   </div>
 
-  <!-- KID PAGE CONTAINER -->
   <div id="kid-pages" style="flex:1;overflow:hidden;position:relative;">
 
-    <!-- ── KID HOME PAGE ── -->
     <div id="kid-page-home" class="kid-page" style="height:100%;overflow-y:auto;padding:0 16px 100px;display:block;">
 
-      <!-- MOMENTUM SCORE HERO -->
       <div id="kid-score-hero" style="background:linear-gradient(135deg,#3a9b7f 0%,#0f5cbd 40%,#53D2FF 100%);border-radius:24px;padding:22px 20px;margin-bottom:16px;position:relative;overflow:hidden;">
         <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(255,255,255,0.08);border-radius:50%;"></div>
         <div style="position:absolute;bottom:-20px;left:30px;width:80px;height:80px;background:rgba(255,255,255,0.05);border-radius:50%;"></div>
@@ -2633,7 +2923,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
         </div>
       </div>
 
-      <!-- PARENT MESSAGE CARD (shown when nudge exists) -->
       <div id="kid-nudge-card" style="display:none;background:linear-gradient(135deg,rgba(111,168,160,0.15),rgba(58,155,127,0.1));border:1.5px solid rgba(111,168,160,0.3);border-radius:18px;padding:14px 16px;margin-bottom:16px;">
         <div style="display:flex;align-items:center;gap:10px;">
           <div style="font-size:1.6rem;">💌</div>
@@ -2644,7 +2933,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
         </div>
       </div>
 
-      <!-- TODAY'S MISSIONS -->
       <div style="margin-bottom:16px;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
           <div style="font-size:1rem;font-weight:800;color:var(--kid-text);">Today's Missions</div>
@@ -2653,7 +2941,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
         <div id="kid-missions-list" style="display:flex;flex-direction:column;gap:10px;"></div>
       </div>
 
-      <!-- BADGES -->
       <div style="margin-bottom:16px;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
           <div style="font-size:1rem;font-weight:800;color:var(--kid-text);">My Badges</div>
@@ -2662,7 +2949,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
         <div id="kid-badges-preview" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;"></div>
       </div>
 
-      <!-- WEEKLY STREAK -->
       <div style="background:var(--kid-surface);border:1.5px solid var(--kid-border);border-radius:18px;padding:16px;margin-bottom:16px;">
         <div style="font-size:0.85rem;font-weight:800;color:var(--kid-text);margin-bottom:12px;">This Week</div>
         <div id="kid-week-dots" style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;"></div>
@@ -2678,7 +2964,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
       </div>
     </div>
 
-    <!-- ── KID LOG PAGE ── -->
     <div id="kid-page-log" class="kid-page" style="height:100%;overflow-y:auto;padding:0 16px 100px;display:none;">
       <div style="padding-top:4px;margin-bottom:20px;">
         <div style="font-size:1.3rem;font-weight:900;color:var(--kid-text);margin-bottom:4px;">Log Activity</div>
@@ -2687,7 +2972,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
       <div id="kid-log-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"></div>
     </div>
 
-    <!-- ── KID BADGES PAGE ── -->
     <div id="kid-page-badges" class="kid-page" style="height:100%;overflow-y:auto;padding:0 16px 100px;display:none;">
       <div style="padding-top:4px;margin-bottom:20px;">
         <div style="font-size:1.3rem;font-weight:900;color:var(--kid-text);margin-bottom:4px;">My Badges</div>
@@ -2696,19 +2980,16 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
       <div id="kid-badges-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;"></div>
     </div>
 
-    <!-- ── KID COACH PAGE ── -->
     <div id="kid-page-coach" class="kid-page" style="height:100%;overflow-y:auto;padding:0 16px 100px;display:none;">
       <div id="kid-coach-content"></div>
     </div>
 
-    <!-- ── KID PROFILE PAGE ── -->
     <div id="kid-page-profile" class="kid-page" style="height:100%;overflow-y:auto;padding:0 16px 100px;display:none;">
       <div id="kid-profile-content"></div>
     </div>
 
-  </div><!-- /kid-pages -->
+  </div>
 
-  <!-- KID NAV BAR -->
   <nav style="position:absolute;bottom:0;left:0;right:0;background:var(--kid-surface);border-top:1.5px solid var(--kid-border);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:20;">
     <button class="kid-tab active" data-ktab="home" onclick="kidShowTab('home')" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:10px 0;border:none;background:none;cursor:pointer;">
       <span style="font-size:1.3rem;">🏠</span>
@@ -2732,11 +3013,10 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
     </button>
   </nav>
 
-  <!-- KID CELEBRATION OVERLAY -->
   <div id="kid-celebration" style="display:none;position:fixed;inset:0;z-index:999;pointer-events:none;"></div>
 
-</div><!-- /kid-shell -->
-<!-- LOG MODAL -->
+</div>
+
 <div class="modal-overlay" id="log-modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
@@ -2746,12 +3026,11 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </div>
 
-<!-- WATER LOG SHEET -->
 <div class="modal-overlay" id="water-log-sheet" onclick="if(event.target===this)closeWaterLogSheet()">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div class="modal-title">💧 Log Water Intake</div>
-    
+
     <div style="padding:12px 0;">
       <div style="font-size:0.75rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Quick Add</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
@@ -2770,12 +3049,11 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
         <button onclick="addWaterCustom()" style="padding:10px 16px;border-radius:10px;border:none;background:var(--primary);color:#fff;font-weight:700;cursor:pointer;transition:all 0.15s;">Add</button>
       </div>
     </div>
-    
+
     <div class="btn-row" style="margin-top:14px;"><button class="btn btn-ghost" onclick="closeWaterLogSheet()">Cancel</button></div>
   </div>
 </div>
 
-<!-- CONFIRM MODAL -->
 <div class="modal-overlay" id="confirm-modal">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
@@ -2788,7 +3066,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </div>
 
-<!-- FASTING CONFIRMATION POPUP -->
 <div class="modal-overlay" id="fasting-confirm-modal" onclick="if(event.target===this)closeFastingConfirm()">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
@@ -2804,8 +3081,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </div>
 
-<!-- GOAL POPUP + CONFETTI -->
-<!-- SHARE MODAL -->
 <div class="modal-overlay" id="share-modal" onclick="if(event.target===this)closeShareModal()">
   <div class="share-modal-sheet">
     <div class="modal-handle"></div>
@@ -2824,7 +3099,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </div>
 
-<!-- ACTIVITY PICKER MODAL -->
 <div class="modal-overlay" id="act-modal" onclick="if(event.target===this)closeActModal()">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
@@ -2850,7 +3124,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
 </div>
 <canvas id="confetti-canvas" style="display:none;"></canvas>
 
-<!-- IMAGE VIEWER -->
 <div class="img-viewer" id="img-viewer" onclick="if(event.target===this)closeImgViewer()">
   <button class="img-viewer-close" onclick="closeImgViewer()">✕</button>
   <img id="img-viewer-src" src="" alt=""/>
@@ -2858,7 +3131,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
 
 <div class="toast" id="toast"></div>
 
-<!-- RESET CONFIRMATION MODAL (hidden by default, outside template) -->
 <div id="reset-confirm-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.45);z-index:2000;flex-direction:column;justify-content:flex-end;align-items:center;">
   <div style="width:100%;background:var(--bg);border-radius:16px 16px 0 0;padding:24px 16px;animation:slideUp 0.3s ease-out;">
     <div style="text-align:center;margin-bottom:20px;">
@@ -2880,8 +3152,6 @@ body.dark .tabbar{background:linear-gradient(145deg,rgba(15,25,43,.82),rgba(10,1
   </div>
 </div>
 <script>
-
-// === THRIVE FINAL HARDENING HELPERS ===
 (function(){
   window.THRIVE_SAFE_VERSION='2026.06-final-clean';
   window.safeText=function(value){return String(value??'').replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});};
@@ -3393,7 +3663,6 @@ function kidShowVeggieSheet(log){
         <div style="font-size:0.8rem;color:var(--kid-muted);">FDA recommends 5 servings a day — tap each one you ate!</div>
       </div>
 
-      <!-- Live count bar -->
       <div style="background:var(--kid-bg);border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:12px;margin-bottom:18px;">
         <div style="flex:1;">
           <div style="display:flex;justify-content:space-between;margin-bottom:5px;">
@@ -3407,13 +3676,11 @@ function kidShowVeggieSheet(log){
         <div id="kid-produce-emoji" style="font-size:1.6rem;">${pickedToday.length>=5?'🌟':pickedToday.length>=3?'💪':'🌱'}</div>
       </div>
 
-      <!-- Fruits -->
       <div style="font-size:0.8rem;font-weight:800;color:var(--kid-text);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">🍎 Fruits</div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;" id="kid-fruits-grid">
         ${buildGrid(KID_PRODUCE.fruits)}
       </div>
 
-      <!-- Veggies -->
       <div style="font-size:0.8rem;font-weight:800;color:var(--kid-text);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">🥦 Vegetables</div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;" id="kid-veggies-grid">
         ${buildGrid(KID_PRODUCE.veggies)}
@@ -3654,7 +3921,6 @@ function kidRenderCoach(){
     nextMove={icon:m.icon,title:m.label,desc:'You\'re close — this one mission will boost your momentum score!',action:m.id,color:'#1A73FF'};
   }
 
-  // ── Weekly insight message ──
   let weekMsg='';
   if(weekAvg>=80) weekMsg='You\'ve been absolutely crushing it this week! Your consistency is paying off. 🔥';
   else if(weekAvg>=60) weekMsg='Really solid week! You\'re building great habits. Keep showing up!';
@@ -3662,7 +3928,6 @@ function kidRenderCoach(){
   else if(streak>0) weekMsg='You showed up today and that\'s what matters. Tomorrow, try to add one more mission!';
   else weekMsg='Today is a great day to start fresh. Pick just one mission and go for it!';
 
-  // ── Strength analysis ──
   const strengths=[];
   const gaps=[];
   if(parseFloat(log['water']||0)>=6) strengths.push({emoji:'💧',label:'Great hydration!'});
@@ -3675,19 +3940,15 @@ function kidRenderCoach(){
   else gaps.push({emoji:'👟',label:'More steps today'});
   if(parseFloat(log['read']||0)>=20) strengths.push({emoji:'📚',label:'Reading champ!'});
 
-  // ── Parent nudge ──
   const nudge=S.get('kid:nudge:'+(name||''));
 
-  // ── BUILD HTML ──
   el.innerHTML=
 
-  // Header
   '<div style="padding-top:4px;margin-bottom:16px;">'
   +'<div style="font-size:1.3rem;font-weight:900;color:var(--kid-text);margin-bottom:2px;">Your Coach 💙</div>'
   +'<div style="font-size:0.85rem;color:var(--kid-muted);">Personalized for '+name+'</div>'
   +'</div>'
 
-  // ── MOMENTUM CARD ──
   +'<div style="background:linear-gradient(135deg,#3a9b7f 0%,#0f5cbd 40%,#53D2FF 100%);border-radius:22px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden;">'
   +'<div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:rgba(255,255,255,0.08);border-radius:50%;"></div>'
   +'<div style="position:relative;z-index:1;">'
@@ -3705,7 +3966,6 @@ function kidRenderCoach(){
   +'</div>'
   +'</div></div>'
 
-  // ── NEXT BEST MOVE ──
   +(nextMove.action
   ? '<div onclick="kidShowTab(\'log\');kidLogMission(\''+nextMove.action+'\')" style="background:var(--kid-surface);border:2px solid '+nextMove.color+';border-radius:20px;padding:18px;margin-bottom:14px;cursor:pointer;position:relative;overflow:hidden;">'
   +'<div style="position:absolute;top:0;left:0;width:4px;height:100%;background:'+nextMove.color+';border-radius:4px 0 0 4px;"></div>'
@@ -3724,7 +3984,6 @@ function kidRenderCoach(){
   +'<div style="font-size:0.83rem;color:var(--kid-muted);">'+nextMove.desc+'</div>'
   +'</div>')
 
-  // ── PARENT MESSAGE ──
   +(nudge
   ? '<div style="background:linear-gradient(135deg,rgba(83,210,255,0.10),rgba(58,155,127,0.08));border:1.5px solid rgba(111,168,160,0.3);border-radius:18px;padding:16px;margin-bottom:14px;">'
   +'<div style="font-size:0.72rem;font-weight:800;color:#6fa8a0;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">💌 Message from your parent</div>'
@@ -3732,7 +3991,6 @@ function kidRenderCoach(){
   +'</div>'
   : '')
 
-  // ── WEEK SNAPSHOT ──
   +'<div style="background:var(--kid-surface);border-radius:18px;padding:16px;margin-bottom:14px;">'
   +'<div style="font-size:0.88rem;font-weight:800;color:var(--kid-text);margin-bottom:4px;">This Week</div>'
   +'<div style="font-size:0.78rem;color:var(--kid-muted);margin-bottom:12px;">'+weekMsg+'</div>'
@@ -3766,10 +4024,8 @@ function kidRenderCoach(){
   +'</div>'
   +'</div>'
 
-  // ── TODAY'S WINS & GAPS ──
   +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">'
 
-  // Wins
   +'<div style="background:rgba(29,158,117,0.08);border:1.5px solid rgba(29,158,117,0.2);border-radius:16px;padding:14px;">'
   +'<div style="font-size:0.78rem;font-weight:800;color:#1D9E75;margin-bottom:8px;">✅ Wins Today</div>'
   +(strengths.length
@@ -3777,7 +4033,6 @@ function kidRenderCoach(){
     : '<div style="font-size:0.75rem;color:var(--kid-muted);">Start logging to see your wins!</div>')
   +'</div>'
 
-  // Gaps
   +'<div style="background:rgba(26,115,255,0.06);border:1.5px solid rgba(26,115,255,0.12);border-radius:16px;padding:14px;">'
   +'<div style="font-size:0.78rem;font-weight:800;color:#3a9b7f;margin-bottom:8px;">🎯 To Work On</div>'
   +(gaps.length
@@ -3786,13 +4041,11 @@ function kidRenderCoach(){
   +'</div>'
   +'</div>'
 
-  // ── DID YOU KNOW ──
   +'<div style="background:linear-gradient(135deg,rgba(111,168,160,0.08),rgba(58,155,127,0.05));border:1.5px solid rgba(111,168,160,0.2);border-radius:18px;padding:16px;margin-bottom:14px;">'
   +'<div style="font-size:0.78rem;font-weight:800;color:#6fa8a0;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">💡 Did You Know?</div>'
   +kidCoachFact(score,log)
   +'</div>'
 
-  // ── REFRESH ──
   +'<button onclick="kidRenderCoach()" style="width:100%;padding:13px;border-radius:14px;border:1.5px solid var(--kid-border);background:var(--kid-surface);color:var(--kid-text);font-size:0.88rem;font-weight:700;cursor:pointer;font-family:inherit;">🔄 Refresh My Coach</button>';
 }
 
@@ -3861,7 +4114,7 @@ function kidShowResetConfirm(show){
   if(el) el.style.display=show?'block':'none';
 }
 function kidDoReset(){
-  // Clear all vita:: keys (same pattern as adult reset)
+
   const keys=[];
   for(let i=0;i<localStorage.length;i++){
     const k=localStorage.key(i);
@@ -3871,7 +4124,6 @@ function kidDoReset(){
   location.reload();
 }
 
-// ══ ONBOARDING ══
 var obStep=0; var obData={}; var obFlowIndex=0;
 
 function bootOnboard(){
@@ -3894,7 +4146,7 @@ function stHeightFields(p){
   return '<div class="field-row field-row-2"><div class="field"><label>Height — Feet</label><input type="number" value="'+(p.heightFt||'')+'" id="st-ht-ft" min="0" max="8" style="width:100%;background:var(--input-bg);border:1.5px solid var(--border);border-radius:8px;color:var(--text);padding:10px 12px;font-family:inherit;font-size:0.86rem;outline:none;"/></div><div class="field"><label>Inches</label><input type="number" value="'+(p.heightIn||'')+'" id="st-ht-in" min="0" max="11" style="width:100%;background:var(--input-bg);border:1.5px solid var(--border);border-radius:8px;color:var(--text);padding:10px 12px;font-family:inherit;font-size:0.86rem;outline:none;"/></div></div>';
 }
 const OB_STEPS=[
-  // ── STEP 0: JOURNEY TYPE ──
+
   {icon:'',title:'Welcome to THRIVE',sub:'How will you be using THRIVE today?',
   canNext:()=>!!obData.journeyType,
   render:()=>`
@@ -3942,7 +4194,6 @@ const OB_STEPS=[
     </div>
   `},
 
-  // ── STEP 1: FAMILY ROLE (only shown if journeyType==='family') ──
   {icon:'',title:'Who are you?',sub:'Set up your account based on your role in the family.',
   canNext:()=>!!obData.familyRole && (obData.familyRole==='parent' || (obData.familyRole==='kid' && (obData.familyCode||'').trim().length>0)),
   render:()=>`
@@ -3991,20 +4242,18 @@ const OB_STEPS=[
   `},
   {icon:'💙',title:'Welcome to THRIVE',sub:"Quick setup — just the essentials to get you started.",canNext:()=>(obData.name||'').trim().length>0&&obData.activity,render:()=>`
     <div style="padding-bottom:18px;">
-      <!-- PERSONAL INFORMATION SECTION -->
+
       <div style="margin-bottom:28px;">
         <div style="margin-bottom:14px;">
           <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin:0 0 4px 0;">Tell us about you</h3>
           <p style="font-size:0.8rem;color:var(--muted);margin:0;line-height:1.4;">Just the basics to personalize your coaching.</p>
         </div>
 
-        <!-- NAME INPUT -->
         <div style="margin-bottom:14px;">
           <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">First name</label>
           <input type="text" id="ob-name" value="${esc(obData.name)}" placeholder="Alex" oninput="obData.name=this.value;checkObNext()" style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;"/>
         </div>
 
-        <!-- UNITS TOGGLE -->
         <div style="margin-bottom:14px;">
           <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Measurement units</label>
           <div style="display:flex;gap:8px;">
@@ -4013,7 +4262,6 @@ const OB_STEPS=[
           </div>
         </div>
 
-        <!-- AGE & WEIGHT -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
           <div>
             <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Age</label>
@@ -4025,7 +4273,6 @@ const OB_STEPS=[
           </div>
         </div>
 
-        <!-- HEIGHT INPUT (Unit-aware) -->
         ${obData.unit==='imperial'?`
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
           <div>
@@ -4045,7 +4292,6 @@ const OB_STEPS=[
         `}
       </div>
 
-      <!-- ACTIVITY LEVEL SECTION -->
       <div style="margin-bottom:0;padding-top:20px;border-top:1px solid var(--border2);">
         <div style="margin-bottom:14px;">
           <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin:0 0 4px 0;">How active are you?</h3>
@@ -4075,11 +4321,11 @@ const OB_STEPS=[
       .unit-btn.selected { box-shadow: 0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.2); }
       .activity-card { position: relative; }
       .activity-card.selected { box-shadow: 0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.2); }
-    </style>
+</style>
   `},
   {icon:'🎯',title:'Goals & Fasting',sub:"Choose your goals and fasting. You can update both anytime in Profile settings.",canNext:()=>obData.goals.length>0 && obData.fastingSchedule,render:()=>`
     <div style="padding-bottom:18px;">
-      <!-- GOALS SECTION -->
+
       <div style="margin-bottom:28px;">
         <div style="margin-bottom:14px;">
           <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin:0 0 4px 0;">Your goals</h3>
@@ -4095,21 +4341,18 @@ const OB_STEPS=[
         </div>
       </div>
 
-      <!-- FASTING SECTION -->
       <div style="padding-top:20px;border-top:1px solid var(--border2);">
         <div style="margin-bottom:14px;">
           <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin:0 0 4px 0;">Fasting schedule</h3>
           <p style="font-size:0.8rem;color:var(--muted);margin:0;line-height:1.4;">Optional. Choose a pattern or skip for now.</p>
         </div>
 
-        <!-- FASTING PRESET BUTTONS -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px;">
           ${['None','16:8','18:6','20:4'].map(schedule=>`
             <button onclick="obSetFasting('${schedule}')" style="border:1.5px solid ${obData.fastingSchedule===schedule?'#1D9E75':'var(--border)'};background:${obData.fastingSchedule===schedule?'#C3F0DD':'var(--surface)'};border-radius:9px;padding:12px;cursor:pointer;transition:all 0.2s;text-align:center;font-weight:600;font-size:0.9rem;color:${obData.fastingSchedule===schedule?'#0F6E56':'var(--text)'};box-shadow:${obData.fastingSchedule===schedule?'0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.2)':'none'};">${schedule}</button>
           `).join('')}
         </div>
 
-        <!-- CUSTOM TIME INPUTS -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
           <div>
             <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Start eating</label>
@@ -4122,7 +4365,6 @@ const OB_STEPS=[
         </div>
       </div>
 
-      <!-- PRO TIP CARD - COMPACT MODERN -->
       <div style="margin-top:20px;padding:14px;background:linear-gradient(135deg,#f3f6ff 0%,#f8fbff 100%);border:1.5px solid #1A73FF;border-radius:16px;color:#08111F;">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
           <div style="display:inline-flex;align-items:center;justify-content:center;background:#1A73FF;border-radius:999px;padding:5px 12px;font-size:0.7rem;font-weight:800;letter-spacing:0.04em;color:#fff;white-space:nowrap;">✨ PRO TIP</div>
@@ -4131,7 +4373,6 @@ const OB_STEPS=[
 
         <p style="font-size:0.82rem;margin:0 0 12px 0;line-height:1.45;color:#334155;">Personalize your experience in the <strong style="color:#3a9b7f;">Profile section</strong>.</p>
 
-        <!-- Settings Tab Icons -->
         <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;">
           <button onclick="return openSettingsTab('targets')" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;padding:9px 4px;background:#fff;border:1.5px solid rgba(26,115,255,0.12);border-radius:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 1px 3px rgba(26,115,255,0.06);">
             <span style="width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;background:rgba(26,115,255,0.10);color:#1A73FF;">🎯</span>
@@ -4160,10 +4401,9 @@ const OB_STEPS=[
     <style>
       .goal-chip { position: relative; overflow: hidden; }
       .goal-chip.selected { box-shadow: 0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.15); }
-    </style>
+</style>
   `},
 
-  // ── KID SETUP STEP (OB_STEPS[3]) ──
   {icon:'🌟',title:"Hey! What's your name?",sub:"Let's get you set up. This will only take a minute!",
   canNext:()=>(obData.name||'').trim().length>0 && obData.age && obData.goals.length>0,
   render:()=>`
@@ -4193,20 +4433,18 @@ const OB_STEPS=[
   `}
 ]
 
-// ── STEP KEY MAP ──
 const OB_STEP_KEYS={
-  0:              OB_STEPS[0],                   // journey type
-  1:              OB_STEPS[1],                   // family role
-  'adult-setup':  OB_STEPS[2],                  // name/age/weight/height
-  'goals-fasting':OB_STEPS[OB_STEPS.length-2],  // goals + fasting
-  'kid-setup':    OB_STEPS[OB_STEPS.length-1]   // kid setup
+  0:              OB_STEPS[0],
+  1:              OB_STEPS[1],
+  'adult-setup':  OB_STEPS[2],
+  'goals-fasting':OB_STEPS[OB_STEPS.length-2],
+  'kid-setup':    OB_STEPS[OB_STEPS.length-1]
 };
-
 
 function obSelectFasting(fasting){
   obData.fastingSchedule=fasting;
   obCalcEnd();
-  // Update all fasting buttons
+
   document.querySelectorAll('.fasting-btn').forEach(btn=>{
     if(btn.dataset.fasting===fasting){
       btn.classList.add('selected');
@@ -4228,9 +4466,9 @@ function obToggleGoal(goal,btn){
   }
   checkObNext();
 }
-function obToggle(field,val,btn,cls){ 
+function obToggle(field,val,btn,cls){
   const arr=obData[field];
-  const idx=arr.indexOf(val); 
+  const idx=arr.indexOf(val);
   if(idx>-1){
     arr.splice(idx,1);
     btn.classList.remove(cls);
@@ -4271,16 +4509,16 @@ function obToggleSection(section){
   const el=document.getElementById(section+'-section');
   const toggle=document.getElementById(section+'-toggle');
   if(!el) return;
-  
+
   const currentMax = el.style.maxHeight;
   const isClosed = currentMax === '0px' || currentMax === '' || parseInt(currentMax) === 0;
-  
+
   if(isClosed){
-    // Open section
+
     el.style.maxHeight = el.scrollHeight + 'px';
     if(toggle) toggle.style.transform = 'rotate(180deg)';
   } else {
-    // Close section
+
     el.style.maxHeight = '0px';
     if(toggle) toggle.style.transform = 'rotate(0deg)';
   }
@@ -4302,23 +4540,22 @@ function obUpdateChallengeCounter(){
     progress.style.background=count===0?'var(--border2)':count<3?'var(--primary)':'var(--success)';
   }
 }
-// ── ACTIVE STEP LIST (dynamic based on journey type) ──
-// → NATIVE: this maps to a navigation stack (React Navigation)
+
 function getActiveSteps(){
   if(obData.journeyType==='family'){
     return [0,1,obData.familyRole==='kid'?'kid-setup':'adult-setup',obData.familyRole==='kid'?null:'goals-fasting'].filter(Boolean);
   }
-  return [0,'adult-setup','goals-fasting']; // personal
+  return [0,'adult-setup','goals-fasting'];
 }
 
 function renderObStep(){
   const steps=getActiveSteps();
   const stepKey=steps[obFlowIndex];
   const s=OB_STEP_KEYS[stepKey]||OB_STEPS[stepKey]||OB_STEPS[obFlowIndex];
-  // Scroll to top
+
   const sc=document.getElementById('ob-scroll-container');
   if(sc) sc.scrollTop=0;
-  // Progress bar — hide on step 0 (welcome screen)
+
   const progEl=document.getElementById('ob-progress');
   if(obFlowIndex===0){
     progEl.innerHTML='';
@@ -4326,7 +4563,7 @@ function renderObStep(){
     const total=steps.length; const current=obFlowIndex+1;
     progEl.innerHTML=`<div style="font-size:0.8rem;font-weight:600;color:var(--muted);">Step ${current} of ${total}</div><div style="height:3px;background:linear-gradient(90deg,var(--primary) 0%,var(--primary) ${Math.round((current/total)*100)}%,var(--surface3) ${Math.round((current/total)*100)}%,var(--surface3) 100%);border-radius:99px;margin-top:8px;"></div>`;
   }
-  // Icon slot — SVG logo on step 0, small dot or nothing on others
+
   const iconEl=document.getElementById('ob-icon');
   if(obFlowIndex===0){
     iconEl.innerHTML=`<img class="thrive-logo-img thrive-logo-onboard" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-logo-kind="main" alt="THRIVE — Every Small Action Counts"/>`;
@@ -4357,10 +4594,10 @@ function obNext(){
   if(!s.canNext()) return;
   if(obFlowIndex<steps.length-1){
     obFlowIndex++;
-    // If personal journey, skip family role step automatically
+
     renderObStep();
   } else {
-    // Done — save profile
+
     const profile={...obData,joinDate:new Date().toISOString(),currentWeek:1};
     if(profile.journeyType==='family' && profile.familyRole==='parent'){
       profile.familyId=genFamilyId();
@@ -4386,27 +4623,27 @@ function obRoleBack(evt){
 function obBack(){
   if(obFlowIndex>0){obFlowIndex--;renderObStep();}
 }
-// Journey selection
+
 function obSetJourney(type,btn){
   obData.journeyType=type;
-  obData.familyRole=''; // reset role when journey changes
-  obFlowIndex=0; // stay on step 0 but re-render
+  obData.familyRole='';
+  obFlowIndex=0;
   renderObStep();
   checkObNext();
 }
 function obSetRole(role,btn){
   obData.familyRole=role;
-  obData.familyCode=''; // reset code on role change
+  obData.familyCode='';
   renderObStep();
   checkObNext();
 }
 function obSelectActivity(activity,btn){
   obData.activity=activity;
-  // Remove selected class from all activity cards
+
   document.querySelectorAll('.activity-card').forEach(card=>{
     card.classList.remove('selected');
   });
-  // Add selected class to the clicked card
+
   if(btn) btn.classList.add('selected');
   checkObNext();
 }
@@ -4414,7 +4651,7 @@ function obSetUnit(unit,btn){
   obData.unit=unit;
   document.querySelectorAll('.unit-btn').forEach(b=>b.classList.remove('selected'));
   btn.classList.add('selected');
-  renderObStep(); // re-render to show right height fields
+  renderObStep();
 }
 function obSetFasting(schedule){
   obData.fastingSchedule=schedule;
@@ -4443,14 +4680,14 @@ function obToggleCond(val,btn){
     btn.classList.remove('selected');
   } else {
     if(val==='None') obData.conditions=[];
-    else { 
-      const ni=arr.indexOf('None'); 
-      if(ni>-1) arr.splice(ni,1); 
+    else {
+      const ni=arr.indexOf('None');
+      if(ni>-1) arr.splice(ni,1);
     }
-    arr.push(val); 
+    arr.push(val);
     btn.classList.add('selected');
-    // Remove 'selected' class from None button if selecting other conditions
-    document.querySelectorAll('.condition-chip').forEach(chip=>{ 
+
+    document.querySelectorAll('.condition-chip').forEach(chip=>{
       if(chip.textContent.trim()==='None' && val!=='None') {
         chip.classList.remove('selected');
       }
@@ -4459,14 +4696,13 @@ function obToggleCond(val,btn){
   checkObNext();
 }
 function getEatHours(fsched){
-  // Extract eating window hours from schedule string like "16:8" -> 8h, "14:10" -> 10h
+
   if(!fsched||fsched==='No fasting') return 12;
   const parts=fsched.split(':');
   if(parts.length===2) return parseInt(parts[1])||8;
   return 8;
 }
 
-// ══ TAB NAV ══
 function showTab(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
@@ -4479,7 +4715,6 @@ function showTab(id){
   if(id==='food'){updateHabitCards();renderMacroGrid();updateWaterBar();}
 }
 
-// ══ DASHBOARD ══
 function refreshApp(){ const p=getProfile(); if(!p) return; document.getElementById('topbar-week').textContent=`Week ${p.currentWeek}`; refreshDashboard(); }
 function refreshDashboard(){
   const p=getProfile(); if(!p) return;
@@ -4532,8 +4767,7 @@ function showDayDetail(dk, label){
   const content2=document.getElementById('day-detail-content');
   if(!panel||!title||!content2) return;
   title.textContent=label;
-  
-  // Calculate fasting duration
+
   let fastingVal='—', fastingPct=0;
   if(log.fastingStartTime){
     const endTime=log.fastingEndTime||Date.now();
@@ -4541,9 +4775,9 @@ function showDayDetail(dk, label){
     const durationH=Math.floor(durationMs/1000/60/60);
     const durationM=Math.floor((durationMs/1000/60)%60);
     fastingVal=durationH+'h '+durationM+'m';
-    fastingPct=Math.min(100, Math.round((durationH/16)*100)); // 16h is max typical fast
+    fastingPct=Math.min(100, Math.round((durationH/16)*100));
   }
-  
+
   const items=[
     {icon:'💧',label:'Water',val:(log.water||0)+' oz',target:(p.waterTarget||100)+' oz',pct:Math.min(100,Math.round(((log.water||0)/(p.waterTarget||100))*100)),color:'#53D2FF'},
     {icon:'🚶',label:'Steps',val:(log.steps||0).toLocaleString(),target:(p.stepTarget||8000).toLocaleString(),pct:Math.min(100,Math.round(((log.steps||0)/(p.stepTarget||8000))*100)),color:'#d97706'},
@@ -4556,7 +4790,7 @@ function showDayDetail(dk, label){
     +(it.target?'<div style="font-size:0.65rem;color:var(--muted);">of '+it.target+'</div>':'')
     +'<div style="height:3px;background:var(--surface3);border-radius:99px;overflow:hidden;margin-top:6px;"><div style="height:100%;width:'+it.pct+'%;background:'+it.color+';border-radius:99px;"></div></div>'
     +'</div>').join('');
-  // Show acts detail if any
+
   if(acts.length){
     content2.innerHTML+='<div style="grid-column:1/-1;font-size:0.76rem;color:var(--muted);margin-top:2px;">'+acts.map(a=>(ACTIVITY_EMOJIS[a.name]||'⚡')+' '+a.name).join(' · ')+'</div>';
   }
@@ -4573,7 +4807,6 @@ function saveTodayLog(log){ S.set('daily:'+todayKey(),log); }
 function getCelebrated(){ return S.get('celebrated:'+todayKey())||{}; }
 function setCelebrated(k){ const c=getCelebrated(); c[k]=true; S.set('celebrated:'+todayKey(),c); }
 
-// ══ WATER QUICK ADD ══
 function addWater(oz){
   const log=getTodayLog(); log.water=(log.water||0)+oz; saveTodayLog(log);
   updateWaterBar(); renderMacroGrid(); animateDailyRing(); renderCoachEngine();
@@ -4619,17 +4852,16 @@ function updateFastingRing(p){
   const circ=2*Math.PI*25; const circle=document.getElementById('fast-ring-circle');
   const badge=document.getElementById('fast-ring-badge'); const titleEl=document.getElementById('fast-ring-title');
   const subEl=document.getElementById('fast-ring-sub'); const pctEl=document.getElementById('fast-ring-pct');
-  
-  // Only show manual fasting sessions - blank if no session started
+
   if(log.fastingStartTime){
     const now=Date.now();
     const elapsedMs=now-log.fastingStartTime;
     const elapsedMin=Math.floor(elapsedMs/1000/60);
     const elapsedH=Math.floor(elapsedMin/60);
     const elapsedM=elapsedMin%60;
-    
+
     if(log.fastingEndTime){
-      // Fasting session ended
+
       const durationMs=log.fastingEndTime-log.fastingStartTime;
       const durationMin=Math.floor(durationMs/1000/60);
       const durationH=Math.floor(durationMin/60);
@@ -4641,7 +4873,7 @@ function updateFastingRing(p){
       badge.className='fasting-ring-badge open';
       badge.innerHTML='✓ Session ended';
     } else {
-      // Fasting in progress
+
       pctEl.textContent='⏱️';
       titleEl.textContent='Fasting in progress';
       subEl.textContent=`${elapsedH}h ${elapsedM}m elapsed`;
@@ -4651,8 +4883,7 @@ function updateFastingRing(p){
     }
     return;
   }
-  
-  // No manual fasting session - show blank state
+
   circle.setAttribute('stroke-dasharray',`0 ${circ}`);
   pctEl.textContent='—';
   titleEl.textContent='Fasting';
@@ -4694,7 +4925,6 @@ function animateRingTo(circle,targetPct,circ,stroke,updateLabel){
   requestAnimationFrame(tick);
 }
 
-// ══ LOG MODAL ══
 var modalField='';
 const MODAL_META={calories:{label:'Log Calories',unit:'kcal'},protein:{label:'Log Protein',unit:'g'},carbs:{label:'Log Carbs',unit:'g'},water:{label:'Log Water',unit:'oz'},steps:{label:'Log Steps',unit:'steps'}};
 function openLogModal(field){
@@ -4717,7 +4947,6 @@ function saveModalLog(){
   if(log.water>=p.waterTarget&&!wasMetBefore.water&&!cel.water){ setCelebrated('water'); setTimeout(()=>showCelebration('💧','Hydration Goal Hit!',`${log.water}oz — you hit your daily water target!`),300); }
 }
 
-// ═══ WATER LOG SHEET ═══
 function openWaterLogSheet(){
   document.getElementById('water-log-sheet').classList.add('show');
   setTimeout(()=>document.getElementById('water-custom-input').focus(),100);
@@ -4728,17 +4957,17 @@ function closeWaterLogSheet(){
 let selectedWaterAmount=null;
 function selectWaterAmount(oz,btn){
   selectedWaterAmount=oz;
-  // Deselect all buttons
+
   document.querySelectorAll('[data-amount]').forEach(b=>{
     b.style.borderColor='var(--border)';
     b.style.background='var(--surface)';
     b.style.color='var(--text)';
   });
-  // Highlight selected button
+
   btn.style.borderColor='var(--primary)';
   btn.style.background='var(--primary)';
   btn.style.color='#fff';
-  // Show the "Add Selected" button
+
   document.getElementById('water-quick-add-btn').style.display='block';
 }
 function addWaterSelected(){
@@ -4763,19 +4992,17 @@ function addWaterCustom(){
   closeWaterLogSheet();
 }
 
-// ══ FASTING START/END TOGGLE ══
 let fastingTimerInterval;
 function toggleFastingState(){
   const log=getTodayLog();
   const today=todayKey();
   const now=new Date().getTime();
   const p=getProfile();
-  
-  // Check if user is currently in a fasting window
+
   const isFasting=log.fastingStartTime&&!log.fastingEndTime;
-  
+
   if(isFasting){
-    // End fasting
+
     log.fastingEndTime=now;
     saveTodayLog(log);
     const durationHours=Math.round((now-log.fastingStartTime)/1000/60/60*10)/10;
@@ -4785,7 +5012,7 @@ function toggleFastingState(){
     document.getElementById('fasting-toggle-btn').style.borderColor='var(--border)';
     clearInterval(fastingTimerInterval);
   } else {
-    // Start fasting
+
     log.fastingStartTime=now;
     log.fastingEndTime=null;
     saveTodayLog(log);
@@ -4793,15 +5020,13 @@ function toggleFastingState(){
     document.getElementById('fasting-toggle-btn').textContent='⏱️ End Fasting';
     document.getElementById('fasting-toggle-btn').style.background='linear-gradient(135deg,rgba(168,85,247,0.2),rgba(139,92,246,0.2))';
     document.getElementById('fasting-toggle-btn').style.borderColor='#1A73FF';
-    
-    // Update fasting display every minute
+
     clearInterval(fastingTimerInterval);
     fastingTimerInterval=setInterval(()=>{
       if(p) updateFastingRing(p);
     }, 60000);
   }
-  
-  // Immediate display update
+
   if(p) updateFastingRing(p);
   renderCoachEngine();
   animateDailyRing();
@@ -4811,7 +5036,7 @@ function updateFastingButtonUI(){
   const log=getTodayLog();
   const btn=document.getElementById('fasting-toggle-btn');
   if(!btn) return;
-  
+
   if(log.fastingStartTime&&!log.fastingEndTime){
     btn.textContent='⏱️ End Fasting';
     btn.style.background='linear-gradient(135deg,rgba(168,85,247,0.2),rgba(139,92,246,0.2))';
@@ -4823,10 +5048,8 @@ function updateFastingButtonUI(){
   }
 }
 
-// ══ NOTES ══
 let notesTimer;
 
-// ══ FOOD LOG & PHOTOS ══
 let activeFoodTab='photos';
 function foodTab(tab){
   activeFoodTab=tab;
@@ -4840,7 +5063,6 @@ function foodTab(tab){
   if(logPanel) logPanel.style.display=tab==='log'?'block':'none';
 }
 
-// compress image to max 1100px JPEG
 function compressImage(file){ return new Promise((res,rej)=>{
   const reader=new FileReader(); reader.onerror=()=>rej(new Error('read failed'));
   reader.onload=e=>{ const img=new Image(); img.onerror=()=>rej(new Error('decode failed'));
@@ -4859,14 +5081,13 @@ async function handleFoodPhotos(input){
       const entry={id:'fp_'+Date.now()+'_'+Math.random().toString(36).slice(2),src,time:new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}),label:'',analyzed:false};
       photos.unshift(entry); S.set('food_photos',photos); added++;
       renderFoodPhotos();
-      // Auto-analyze
+
       autoAnalyzeFoodPhoto(entry.id,src);
     }catch(e){showToast('⚠️ Could not process photo');}
   }
   if(added>0) showToast(`📸 ${added} photo${added>1?'s':''} added!`);
 }
 
-// ══ FOOD HABIT TRACKER ══
 function getHabitLog(){
   return S.get('habit_log:'+todayKey())||{vegetables:0,fruit:0,fiber:0,protein:0,fastfood:0,streak:0};
 }
@@ -4885,7 +5106,6 @@ function toggleHabit(habit){
   showToast('✓ '+habit.charAt(0).toUpperCase()+habit.slice(1)+' updated');
 }
 
-// Adult food picker — same emoji-box UX as kid
 const ADULT_PRODUCE={
   vegetables:[
     {id:'broccoli',emoji:'🥦',label:'Broccoli'},  {id:'spinach',emoji:'🥬',label:'Spinach'},
@@ -4914,12 +5134,13 @@ const ADULT_PRODUCE={
     {id:'crackers',emoji:'🫙',label:'Crackers'},     {id:'bran',    emoji:'🌿',label:'Bran'}
   ],
   protein:[
-    {id:'chicken', emoji:'🍗',label:'Chicken'},     {id:'fish',    emoji:'🐟',label:'Fish'},
-    {id:'eggs',    emoji:'🥚',label:'Eggs'},         {id:'beef',    emoji:'🥩',label:'Beef'},
-    {id:'tofu',    emoji:'🫙',label:'Tofu'},         {id:'shrimp',  emoji:'🍤',label:'Shrimp'},
-    {id:'beans2',  emoji:'🫘',label:'Beans'},        {id:'nuts',    emoji:'🥜',label:'Nuts'},
-    {id:'turkey',  emoji:'🦃',label:'Turkey'},       {id:'salmon',  emoji:'🐠',label:'Salmon'},
-    {id:'tuna',    emoji:'🐡',label:'Tuna'},         {id:'yogurt',  emoji:'🥛',label:'Greek Yogurt'}
+    {id:'chicken', emoji:'🍗',label:'Chicken'},     {id:'turkey',  emoji:'🦃',label:'Turkey'},
+    {id:'pork',    emoji:'🐖',label:'Pork'},         {id:'beef',    emoji:'🥩',label:'Beef'},
+    {id:'seafood', emoji:'🐟',label:'Seafood'},      {id:'eggs',    emoji:'🥚',label:'Eggs'},
+    {id:'yogurt',  emoji:'🥛',label:'Greek Yogurt'}, {id:'cheese',  emoji:'🧀',label:'Cheese'},
+    {id:'tofu',    emoji:'🧊',label:'Tofu'},         {id:'beans2',  emoji:'🫘',label:'Beans'},
+    {id:'nuts',    emoji:'🥜',label:'Nuts'},         {id:'proteinpowder',emoji:'🥤',label:'Protein Powder'},
+    {id:'other',   emoji:'➕',label:'Other'}
   ]
 };
 const FOOD_META={
@@ -4981,7 +5202,7 @@ function showFoodPicker(type){
 
 function adultToggleProduce(type,id){
   const meta=FOOD_META[type]; if(!meta) return;
-  const key=type; // keyed under type
+  const key=type;
   if(!window._adultFoodPicked) window._adultFoodPicked={};
   const list=window._adultFoodPicked[type]||[];
   const btn=document.getElementById('fpick-'+id);
@@ -5049,7 +5270,6 @@ function getWeekActivityCount(){
   return total;
 }
 
-// Helper: most common activity this week
 function getWeekTopActivities(){
   const today=new Date(); const sun=new Date(today); sun.setDate(today.getDate()-today.getDay());
   const counts={};
@@ -5061,7 +5281,6 @@ function getWeekTopActivities(){
   return Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([name,count])=>({name,count}));
 }
 
-// ══ COACH ENGINE ══
 function pct(v,t){ return Math.max(0,Math.min(100,Math.round((+v||0)/((+t)||1)*100))); }
 
 function getScoreParts(){
@@ -5071,7 +5290,7 @@ function getScoreParts(){
   const calPct=pct(log.calories,p.calorieTarget||1900);
   const proPct=pct(log.protein,p.proteinTarget||140);
   const nutrition=Math.round((calPct+proPct)/2);
-  // fasting pct
+
   let fasting=0;
   if(p.fastingSchedule&&p.fastingSchedule!=='No fasting'){
     const now=new Date(),nowMin=now.getHours()*60+now.getMinutes();
@@ -5105,13 +5324,12 @@ function getNextAction(){
 function getCompletedGoals(){
   const p=getProfile()||{}; const log=getTodayLog();
   let completed=0;
-  
-  // Check each of 4 main metrics
+
   if(log.water>=p.waterTarget) completed++;
   if(log.steps>=p.stepTarget) completed++;
   if(log.calories>=p.calorieTarget) completed++;
   if(getTodayActivities().length>0) completed++;
-  
+
   return {completed, total: 4};
 }
 
@@ -5127,24 +5345,22 @@ function setStatus(id,pct,text,className){
   }
 }
 
-// ── HELPER: Get weight history from check-ins ──
 function getWeightHistory(weeks=4){
   const checkins=S.get('checkins')||[];
   const weights=[];
   const today=new Date();
-  
+
   for(let i=0;i<weeks;i++){
     const weekStart=new Date(today);
     weekStart.setDate(today.getDate()-(today.getDay())+7-i*7);
     const weekKey=weekStart.getFullYear()+'-W'+pad2(Math.ceil((weekStart.getDate()-weekStart.getDay()+4)/7));
-    
-    // Find check-in for this week
+
     const checkin=checkins.find(c=>{
       const cDate=new Date(c.date||Date.now());
       const cWeek=cDate.getFullYear()+'-W'+pad2(Math.ceil((cDate.getDate()-cDate.getDay()+4)/7));
       return cWeek===weekKey;
     });
-    
+
     if(checkin && checkin.weight) weights.unshift({week:'Week '+(weeks-i), weight:checkin.weight, date:checkin.date});
     else weights.unshift(null);
   }
@@ -5153,11 +5369,11 @@ function getWeightHistory(weeks=4){
 
 function getFastingDays(week='current'){
   const p=getProfile(); if(!p || !p.fastingSchedule || p.fastingSchedule==='None') return {days:0, avg:0};
-  
+
   const today=new Date();
   const sun=new Date(today);
   sun.setDate(today.getDate()-today.getDay());
-  
+
   let fastDays=0, totalHours=0;
   for(let i=0;i<7;i++){
     const d=new Date(sun); d.setDate(sun.getDate()+i);
@@ -5175,18 +5391,15 @@ function getFastingDays(week='current'){
 function renderCoachEngine(){
   const p=getProfile(); if(!p) return;
   const s=getScoreParts(); const n=getNextAction(); const log=getTodayLog();
-  
-  // Helper: get yesterday's log for trend comparison
+
   const yesterday=new Date();yesterday.setDate(yesterday.getDate()-1);
   const yesterdayKey=`${yesterday.getFullYear()}-${pad2(yesterday.getMonth()+1)}-${pad2(yesterday.getDate())}`;
   const yLog=S.get('daily:'+yesterdayKey)||{};
 
-  // ── Score circle (Today tab) ──
   const sc=document.getElementById('score-circle');
   if(sc) sc.style.setProperty('--score', s.overall);
   setText('score-num', s.overall);
-  
-  // Calculate next milestone (25, 50, 75, 100)
+
   const milestones=[25,50,75,100];
   let nextMilestone=100;
   for(let m of milestones){
@@ -5197,21 +5410,17 @@ function renderCoachEngine(){
   }
   const pointsToNext=Math.max(0,nextMilestone-s.overall);
   setText('score-until-next',nextMilestone+(pointsToNext>0?' (+'+pointsToNext+' pts)':''));
-  
-  // Update status tier label
+
   setText('score-status', s.overall>=85?'Excellent momentum':s.overall>=70?'Strong momentum':s.overall>=45?'Building momentum':'Start with one easy win');
-  
-  // Daily completion percentage (based on 4 metrics)
-  const completionPct=Math.round((pct(log.water,p.waterTarget)*0.25 + pct(log.steps,p.stepTarget)*0.25 + 
+
+  const completionPct=Math.round((pct(log.water,p.waterTarget)*0.25 + pct(log.steps,p.stepTarget)*0.25 +
                                   pct(log.calories,p.calorieTarget)*0.25 + Math.min(100,getTodayActivities().length*20)*0.25)/100);
   setText('score-completion', completionPct+'%');
   setText('score-context', completionPct>=100?'🎉 Complete!':completionPct>=75?'Nearly there!':completionPct>=50?'On track':'Getting started');
-  
-  // Update Goals Completed count
+
   const goalsCount=getCompletedGoals();
   setText('daily-progress', goalsCount.completed+' of '+goalsCount.total);
 
-  // ── Dynamic coaching insight ──
   let coachMsg='';
   if(completionPct>=100) coachMsg='🎉 Amazing! You crushed your goals today!';
   else if(completionPct>=75) coachMsg='So close! Just one more push to complete your day.';
@@ -5223,13 +5432,11 @@ function renderCoachEngine(){
   setText('coach-focus-title', completionPct>=75?'Almost done!':'Keep going!');
   setText('coach-insight', coachMsg);
 
-  // ── TODAY'S BEST MOVE — Render hero card from analysis ──
   const waterLeft=Math.max(0,(p.waterTarget||100)-log.water);
   const stepsLeft=Math.max(0,(p.stepTarget||8000)-log.steps);
   const habitLog=getHabitLog();
   let heroAction='', heroReward='+4', heroLikelihood='75%', heroTip='', heroWin='';
-  
-  // Determine best action based on ALL data (water, steps, nutrition, food habits)
+
   if(waterLeft>=24){
     heroAction='Drink '+Math.min(24,waterLeft)+' oz water';
     heroReward='+4';
@@ -5279,20 +5486,18 @@ function renderCoachEngine(){
     heroTip='Every log counts—more data = better coaching';
     heroWin='You\'re on track. One more push!';
   }
-  
+
   setText('hero-action-name', heroAction);
   setText('hero-impact', heroReward+' Thrive');
   setText('hero-success', heroLikelihood+' chance');
   const heroInsightText=completionPct>=100?'🎉 Complete this and you\'ll hit all 4 goals today.':(stepsLeft>0&&stepsLeft<3000||waterLeft>0&&waterLeft<32)?'Complete this and you\'ll hit all 4 goals today.':'Pick one action to move closer to your goals.';
   setText('hero-insight', heroInsightText);
-  
-  // Update coaching tips
+
   const tipEl=document.querySelector('.hero-coaching-tips');
   if(tipEl){
     tipEl.innerHTML=`<div class="coaching-tip">💡 <strong>Pro tip:</strong> ${heroTip}</div><div class="coaching-tip">🎯 <strong>Today's win:</strong> ${heroWin}</div>`;
   }
 
-  // ── Trend indicators ── (compare to yesterday)
   const waterTrend=(log.water||0)>(yLog.water||0)?'↑':(log.water||0)<(yLog.water||0)?'↓':'→';
   const stepsTrend=(log.steps||0)>(yLog.steps||0)?'↑':(log.steps||0)<(yLog.steps||0)?'↓':'→';
   const actTrend=(getTodayActivities().length||0)>((S.get('activities:'+yesterdayKey)||[]).length||0)?'↑':
@@ -5302,10 +5507,8 @@ function renderCoachEngine(){
   setText('m-act-trend', actTrend);
   if(document.getElementById('m-fast-trend')) setText('m-fast-trend', '→');
 
-  // ── Metric grid ──
   const calPct=pct(log.calories,p.calorieTarget||1900);
 
-  // Water - show remaining oz
   const waterRemaining=Math.max(0,(p.waterTarget||100)-(log.water||0));
   const waterVal=log.water||0;
   const waterPct=pct(waterVal, p.waterTarget||100);
@@ -5332,7 +5535,6 @@ function renderCoachEngine(){
   }
   setWidth('m-water-fill', s.hydration);
 
-  // Steps - show remaining steps
   const stepsVal=log.steps||0;
   const stepTarget=p.stepTarget||8000;
   const stepsRemaining=Math.max(0,stepTarget-stepsVal);
@@ -5364,15 +5566,14 @@ function renderCoachEngine(){
   }
   setWidth('m-steps-fill', s.movement);
 
-  // Fasting countdown - clarified messaging
   const now=new Date();
   const nowMin=now.getHours()*60+now.getMinutes();
-  // Metric fasting card - only show manual fasting sessions
+
   const fastingLog=getTodayLog();
   if(fastingLog.fastingStartTime){
-    // Manual fasting in progress or completed
+
     if(fastingLog.fastingEndTime){
-      // Fasting session ended
+
       const durationMs=fastingLog.fastingEndTime-fastingLog.fastingStartTime;
       const durationMin=Math.floor(durationMs/1000/60);
       const durationH=Math.floor(durationMin/60);
@@ -5382,7 +5583,7 @@ function renderCoachEngine(){
       setStatus('m-fast-status', 100, '✓ Complete', 'complete');
       setWidth('m-fast-fill', 100);
     } else {
-      // Fasting in progress
+
       const now=Date.now();
       const elapsedMs=now-fastingLog.fastingStartTime;
       const elapsedMin=Math.floor(elapsedMs/1000/60);
@@ -5394,17 +5595,16 @@ function renderCoachEngine(){
       setWidth('m-fast-fill', 75);
     }
   } else {
-    // No manual fasting session - show blank
+
     setText('m-fast-val', '—');
     setText('m-fast-sub', 'not started');
     setStatus('m-fast-status', 0, 'Ready', 'getting-started');
     setWidth('m-fast-fill', 0);
   }
 
-  // Activity metric card - show SESSIONS LOGGED (not remaining)
   const todayActs=getTodayActivities();
   const actSessions=todayActs.length;
-  const actTarget=2; // goal is 2 sessions
+  const actTarget=2;
   const actPct=pct(actSessions, actTarget);
   if(actSessions>=actTarget){
     setText('m-act-val', actSessions.toString());
@@ -5421,25 +5621,20 @@ function renderCoachEngine(){
   }
   setWidth('m-act-fill', Math.min(100, actSessions*50));
 
-  // Nutrition (update coach signal only, no metric card now)
   const meals=getFoodLog();
   setText('m-cal-val', log.calories?(log.calories+' kcal'):(calPct>=80?'On track':'Log meals'));
   setText('m-cal-sub', log.protein?(log.protein+'g protein'):(meals.length?meals.length+' meals':'tap food tab'));
   setWidth('m-cal-fill', calPct);
 
-  // ── Log feed ──
   renderLogFeed();
 
-  // ── Coach tab signals (only update if elements exist in DOM) ──
   setText('coach-priority-title', n.title);
   setText('coach-priority-body', n.body);
   setText('coach-impact-badge', '↗ '+n.impact);
   setText('sig-hydration', s.hydration>=100?'Hydration goal complete. Great work today!':(Math.max(0,(p.waterTarget||100)-log.water)+' oz left to reach your goal.'));
-  
-  // Steps signal
+
   setText('sig-steps', s.movement>=100?'Step goal complete. Strong movement day!':(Math.max(0,(p.stepTarget||8000)-log.steps).toLocaleString()+' steps remaining.'));
-  
-  // Nutrition signal now includes food habits
+
   const habitLog2=getHabitLog();
   const habitsComplete=[];
   const habitsIncomplete=[];
@@ -5449,21 +5644,18 @@ function renderCoachEngine(){
   if(habitLog2.protein>=2) habitsComplete.push('🍗 Protein'); else habitsIncomplete.push('🍗 Protein ('+Math.max(0,2-habitLog2.protein)+')');
   const habitMsg=habitsIncomplete.length?habitsIncomplete.join(', '):habitsComplete.length?habitsComplete.join(', ')+' complete':'Track your meals to unlock habit insights';
   setText('sig-nutrition', habitMsg);
-  
-  // Activities signal
+
   const actCount=getTodayActivities().length;
   setText('sig-movement', actCount>0?actCount+' activity session'+(actCount>1?'s':'')+' logged':'No activities logged yet');
-  
-  // Calculate eating window status for fasting signal
+
   const[sh,sm]=(p.eatStart||'10:00').split(':').map(Number);
   const[eh,em]=(p.eatEnd||'18:00').split(':').map(Number);
   const now2=new Date();
   const nowMin2=now2.getHours()*60+now2.getMinutes();
   const inWin2=nowMin2>=sh*60+sm&&nowMin2<=eh*60+em;
-  
+
   setText('sig-fasting', inWin2?('Eating window open. Closes at '+fmt12(p.eatEnd)+'.'):'Fasting in progress ('+p.fastingSchedule+'). '+s.fasting+'% complete.');
 
-  // ── Weekly snapshot (Coach tab) ──
   const snapEl=document.getElementById('coach-weekly-snapshot');
   if(snapEl){
     const today2=new Date(); const sun2=new Date(today2); sun2.setDate(today2.getDate()-today2.getDay());
@@ -5474,8 +5666,7 @@ function renderCoachEngine(){
       const dk=d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());
       const l=S.get('daily:'+dk)||{};
       if(l.calories||l.steps){wPro+=l.protein||0;wSteps+=l.steps||0;wWater+=l.water||0;wDays++;}
-      
-      // Habit tracking data
+
       const h=S.get('habit_log:'+dk)||{};
       if(h.vegetables!==undefined||h.fruit!==undefined||h.fiber!==undefined){
         wVeg+=(h.vegetables>=5?1:0);
@@ -5493,31 +5684,28 @@ function renderCoachEngine(){
     const topActs=getWeekTopActivities().slice(0,2);
     const checkins=S.get('checkins')||[];
     const lastCI=checkins[checkins.length-1];
-    
-    // Habit completion percentages
+
     const vegPct=wHabitDays?Math.round(wVeg/wHabitDays*100):0;
     const fruitPct=wHabitDays?Math.round(wFruit/wHabitDays*100):0;
     const fiberPct=wHabitDays?Math.round(wFiber/wHabitDays*100):0;
     const proteinPct=wHabitDays?Math.round(wProteinHabit/wHabitDays*100):0;
     const fastFoodPct=wHabitDays?Math.round(wFastFood/wHabitDays*100):0;
-    
+
     const coachDaysBadge=document.getElementById('coach-days-badge'); if(coachDaysBadge) coachDaysBadge.textContent=wDays+'/7 days';
-    
-    // Calculate percentages for progress bars
+
     const stepsPct=Math.min(100,Math.round((avgSteps/(p.stepTarget||8000))*100));
     const waterPct=Math.min(100,Math.round((avgWater/(p.waterTarget||100))*100));
     const proteinProgPct=Math.min(100,Math.round((avgPro/(p.proteinTarget||140))*100));
-    
-    // ── MODERN COACH DASHBOARD ──
+
     const weights=getWeightHistory(4);
     const fasting=getFastingDays();
     const lastCheckin=checkins[checkins.length-1];
     const lastCheckinDate=lastCheckin?new Date(lastCheckin.date||Date.now()):null;
     const daysSinceCheckIn=lastCheckinDate?Math.floor((Date.now()-lastCheckinDate)/1000/60/60/24):999;
     const needsWeightUpdate=daysSinceCheckIn>7;
-    
+
     snapEl.innerHTML=`
-      <!-- Week Selector -->
+
       <div style="margin-bottom:16px;">
         <select id="coach-week-select" onchange="document.getElementById('coach-weekly-snapshot').parentElement.childNodes.forEach(n=>n.nodeType===1&&n.id==='coach-weekly-snapshot'&&location.reload());" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-weight:600;font-size:0.85rem;cursor:pointer;appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 16 16%22><path fill=%22%231A73FF%22 d=%22M12 6L8 10 4 6%22/></svg>');background-repeat:no-repeat;background-position:right 10px center;padding-right:32px;">
           <option value="0">This Week</option>
@@ -5526,8 +5714,7 @@ function renderCoachEngine(){
           <option value="3">3 Weeks Ago</option>
         </select>
       </div>
-      
-      <!-- Weight Compact Section -->
+
       <div style="background:linear-gradient(135deg,rgba(58,155,127,0.05) 0%,rgba(111,168,160,0.03) 100%);border:1.5px solid var(--border);border-radius:12px;padding:12px;margin-bottom:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;">
         <div>
           <div style="font-size:0.7rem;color:var(--muted);font-weight:600;margin-bottom:4px;">⚖️ Weight</div>
@@ -5538,16 +5725,14 @@ function renderCoachEngine(){
           ${needsWeightUpdate?'<div style="font-size:0.65rem;font-weight:700;color:#dc2626;background:rgba(220,38,38,0.1);padding:6px 8px;border-radius:6px;text-align:center;line-height:1.3;">📋 Update in Check-in</div>':'<div style="font-size:0.75rem;color:var(--muted);text-align:right;line-height:1.4;">${daysSinceCheckIn} days since update</div>'}
         </div>
       </div>
-      
-      <!-- Fasting Consistency Section -->
+
       ${p.fastingSchedule && p.fastingSchedule!=='None'?`
         <div style="background:linear-gradient(135deg,rgba(79,172,254,0.05) 0%,rgba(59,130,246,0.03) 100%);border:1.5px solid var(--border);border-radius:12px;padding:12px;margin-bottom:14px;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
             <div style="font-size:0.7rem;color:var(--muted);font-weight:600;">⏱️ Fasting Pattern</div>
             <div style="font-size:0.9rem;font-weight:700;color:#3a9b7f;">${fasting.days}/7 days</div>
           </div>
-          
-          <!-- Day indicators -->
+
           <div style="display:flex;gap:3px;">
             ${Array(7).fill(0).map((_, i)=>{
               const d=new Date(); d.setDate(d.getDate()-6+i);
@@ -5559,15 +5744,13 @@ function renderCoachEngine(){
           </div>
         </div>
       `:''}
-      
-      <!-- Goals Progress Section -->
+
       <div style="margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
           <span style="font-size:1rem;">🎯</span>
           <span style="font-size:0.85rem;font-weight:700;color:var(--text);">Goals Progress</span>
         </div>
-        
-        <!-- Steps -->
+
         <div style="background:var(--surface2);border-radius:10px;padding:10px;margin-bottom:8px;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
             <span style="font-size:0.75rem;color:var(--muted);">🚶 Avg steps</span>
@@ -5576,8 +5759,7 @@ function renderCoachEngine(){
           <div style="font-size:0.8rem;font-weight:700;color:var(--text);">${avgSteps.toLocaleString()}/${(p.stepTarget||8000).toLocaleString()}</div>
           <div style="height:3px;background:var(--border);border-radius:99px;overflow:hidden;margin-top:6px;"><div style="height:100%;width:${stepsPct}%;background:#d97706;border-radius:99px;"></div></div>
         </div>
-        
-        <!-- Water -->
+
         <div style="background:var(--surface2);border-radius:10px;padding:10px;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
             <span style="font-size:0.75rem;color:var(--muted);">💧 Avg water</span>
@@ -5587,30 +5769,27 @@ function renderCoachEngine(){
           <div style="height:3px;background:var(--border);border-radius:99px;overflow:hidden;margin-top:6px;"><div style="height:100%;width:${waterPct}%;background:#53D2FF;border-radius:99px;"></div></div>
         </div>
       </div>
-      
-      <!-- Nutrition Section -->
+
       <div style="margin-bottom:14px;">
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
           <span style="font-size:1rem;">🍽️</span>
           <span style="font-size:0.85rem;font-weight:700;color:var(--text);">Nutrition</span>
         </div>
-        
+
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
-          <!-- Vegetables -->
+
           <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:10px;text-align:center;">
             <div style="font-size:1.2rem;margin-bottom:4px;">🥦</div>
             <div style="font-size:0.7rem;color:var(--muted);margin-bottom:2px;">Vegetables</div>
             <div style="font-size:0.85rem;font-weight:800;color:#22c55e;">${vegPct}%</div>
           </div>
-          
-          <!-- Fruit -->
+
           <div style="background:rgba(244,63,94,0.08);border:1px solid rgba(244,63,94,0.2);border-radius:10px;padding:10px;text-align:center;">
             <div style="font-size:1.2rem;margin-bottom:4px;">🍎</div>
             <div style="font-size:0.7rem;color:var(--muted);margin-bottom:2px;">Fruit</div>
             <div style="font-size:0.85rem;font-weight:800;color:#f43f5e;">${fruitPct}%</div>
           </div>
-          
-          <!-- Fiber -->
+
           <div style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);border-radius:10px;padding:10px;text-align:center;">
             <div style="font-size:1.2rem;margin-bottom:4px;">🌾</div>
             <div style="font-size:0.7rem;color:var(--muted);margin-bottom:2px;">Fiber</div>
@@ -5618,14 +5797,13 @@ function renderCoachEngine(){
           </div>
         </div>
       </div>
-      
-      <!-- Activity Section -->
+
       <div>
         <div style="display:flex;align-items:center;gap:6px;margin-bottom:10px;">
           <span style="font-size:1rem;">⚡</span>
           <span style="font-size:0.85rem;font-weight:700;color:var(--text);">Activity</span>
         </div>
-        
+
         <div style="background:var(--surface2);border-radius:10px;padding:10px;border:1px solid var(--border);">
           <div style="font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:2px;">${weekSessions} session${weekSessions!==1?'s':''}</div>
           ${topActs.length?'<div style="font-size:0.75rem;color:var(--muted);">'+topActs.map(a=>(ACTIVITY_EMOJIS[a.name]||'⚡')+' '+a.name+' ('+a.count+'x)').join(' · ')+'</div>':'<div style="font-size:0.75rem;color:var(--muted);">No activities logged</div>'}
@@ -5634,10 +5812,9 @@ function renderCoachEngine(){
     `;
   }
 
-  // Progress trend (Coach tab) - now consolidated into modern dashboard
   const trendEl=document.getElementById('coach-progress-trend');
   if(trendEl){
-    trendEl.innerHTML=''; // Hidden - consolidated into snapshot
+    trendEl.innerHTML='';
   }
 }
 
@@ -5660,8 +5837,7 @@ function renderLogFeed(){
     </div>`).join('');
 }
 
-// ══ COACH SUMMARY (local data analysis — kept for compat) ══
-const QUICK_PROMPTS=[]; // kept for compatibility
+const QUICK_PROMPTS=[];
 function initChat(){ generateSummary(); }
 function renderQuickPrompts(){}
 function renderAllMessages(){}
@@ -5688,7 +5864,7 @@ var ciActiveTab='log';
 function renderCheckinLog(){
   const p=getProfile(); if(!p) return;
   document.getElementById('checkin-sub').textContent=`Week ${p.currentWeek} · A quick reflection to close your week`;
-  // Auto-calculate from logged data
+
   const today=new Date(); const sun=new Date(today); sun.setDate(today.getDate()-today.getDay());
   let totalSteps=0,daysWithSteps=0;
   for(let i=0;i<7;i++){
@@ -5705,11 +5881,8 @@ function renderCheckinLog(){
 
     <div style="padding-bottom:100px;">
 
-
-      <!-- WEEKLY REFLECTION + HABITS -->
       <div style="background:linear-gradient(135deg, rgba(26,115,255,0.12) 0%, rgba(58,155,127,0.08) 100%);border:1.5px solid rgba(58,155,127,0.25);border-radius:20px;padding:20px;margin-bottom:20px;box-shadow:0 8px 32px rgba(26,115,255,0.12);">
-        
-        <!-- SECTION 1: WEEKLY CONSISTENCY CHECK -->
+
         <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1.5px solid rgba(26,115,255,0.12);">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
             <span style="font-size:1.3rem;">💪</span>
@@ -5723,44 +5896,42 @@ function renderCheckinLog(){
           <div style="text-align:center;font-size:0.7rem;color:var(--muted);margin-top:8px;">Not at all &nbsp; • &nbsp; Perfectly consistent</div>
         </div>
 
-        <!-- SECTION 2: WEEKLY WINS -->
         <div>
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
             <span style="font-size:1.3rem;">✨</span>
             <label style="font-size:0.85rem;font-weight:700;color:var(--text);">Your Week in Wins</label>
           </div>
-          
+
           <div style="display:flex;flex-direction:column;gap:8px;">
             ${(() => {
               const wins = [];
               let stepsDays=0, actDays=0, waterDays=0, fastDays=0;
               const sun=new Date(new Date()); sun.setDate(new Date().getDate()-new Date().getDay());
-              
+
               for(let i=0;i<7;i++){
                 const d=new Date(sun); d.setDate(sun.getDate()+i);
                 const dk=d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());
                 const log=S.get('daily:'+dk)||{};
                 const h=S.get('habit_log:'+dk)||{};
-                
+
                 if(log.steps && log.steps >= p.stepTarget) stepsDays++;
                 if(log.activityCount > 0) actDays++;
                 if(log.water && log.water >= 8) waterDays++;
                 if(h.fasting) fastDays++;
               }
-              
+
               if(stepsDays >= 4) wins.push({emoji:'🚶', text: 'Hit step goal '+stepsDays+'/7 days', color:'#10b981'});
               if(actDays >= 3) wins.push({emoji:'⚡', text: 'Completed '+actDays+' activities', color:'#3b82f6'});
               if(waterDays >= 5) wins.push({emoji:'💧', text: 'Drank water '+waterDays+'/7 days', color:'#06b6d4'});
               if(p.fastingSchedule && fastDays >= 3) wins.push({emoji:'⏱️', text: 'Fasted '+fastDays+'/7 days', color:'#f59e0b'});
-              
-              return wins.length > 0 
+
+              return wins.length > 0
                 ? wins.map(w=>'<div style="background:rgba(255,255,255,0.5);border:1.5px solid rgba(26,115,255,0.12);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;"><input type="checkbox" checked style="width:18px;height:18px;cursor:pointer;accent-color:'+w.color+';border-radius:4px;"/><span style="font-size:1.1rem;">'+w.emoji+'</span><span style="font-size:0.85rem;font-weight:600;color:var(--text);">'+w.text+'</span></div>').join('')
                 : '<div style="text-align:center;padding:20px;color:var(--muted);font-size:0.8rem;">Keep logging your habits to see your wins here! 🎯</div>';
             })()}
           </div>
         </div>
       </div>
-
 
       <div class="card" style="margin-bottom:16px;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
@@ -5771,7 +5942,6 @@ function renderCheckinLog(){
           style="width:100%;background:var(--input-bg);border:1.5px solid var(--border);border-radius:12px;color:var(--text);padding:12px 14px;font-family:inherit;font-size:0.95rem;outline:none;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);font-weight:600;"/>
       </div>
 
-
       <div class="card" style="margin-bottom:16px;">
         <div style="margin-bottom:14px;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;">
@@ -5780,7 +5950,6 @@ function renderCheckinLog(){
           </div>
           <div style="font-size:0.8rem;color:var(--muted);">Rate your week</div>
         </div>
-
 
         <div style="margin-bottom:18px;padding:14px;background:rgba(217,119,6,0.08);border-radius:14px;border:1px solid rgba(217,119,6,0.15);">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
@@ -5797,28 +5966,25 @@ function renderCheckinLog(){
           </div>
         </div>
 
-
         <div style="padding:14px;background:rgba(245,158,11,0.08);border-radius:14px;border:1px solid rgba(245,158,11,0.15);">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-            <span style="font-weight:700;font-size:0.9rem;color:#f59e0b;">🍽️ Hunger</span>
-            <span id="sl-hunger-val" style="background:#f59e0b;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:0.8rem;">5</span>
+            <span style="font-weight:700;font-size:0.9rem;color:#f59e0b;">🍽️ Hunger Control</span>
+            <span id="sl-hunger-val" style="background:#16a34a;color:#fff;padding:6px 12px;border-radius:99px;font-weight:800;font-size:0.8rem;">5</span>
           </div>
           <input type="range" class="colored-slider" id="sl-hunger-input" min="1" max="10" value="5"
-            style="--slider-color:#f59e0b;--slider-bg:rgba(245,158,11,0.15);width:100%;margin-bottom:10px;"
+            style="--slider-color:#16a34a;--slider-bg:rgba(22,163,74,0.15);width:100%;margin-bottom:10px;"
             oninput="updateHungerSlider(+this.value)"/>
           <div style="display:flex;justify-content:space-between;font-size:0.7rem;color:var(--muted);font-weight:600;">
-            <span>None</span>
-            <span id="sl-hunger-desc" style="color:#f59e0b;font-weight:700;text-align:center;">Manageable</span>
-            <span>Intense</span>
+            <span>Low control</span>
+            <span id="sl-hunger-desc" style="color:#16a34a;font-weight:700;text-align:center;">Moderate control</span>
+            <span>High control</span>
           </div>
         </div>
       </div>
 
-
       </div>
 
     </div>
-
 
     <div style="position:fixed;bottom:0;left:0;right:0;background:linear-gradient(to top,var(--bg),var(--bg) 80%,rgba(255,255,255,0));padding:12px 16px 16px;z-index:999;border-top:1px solid var(--border2);">
       <button class="btn btn-primary" onclick="submitCheckin()" style="width:100%;padding:14px 16px;font-size:0.95rem;font-weight:700;border-radius:12px;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(58,155,127,0.2);transition:all 0.2s;">
@@ -5828,7 +5994,6 @@ function renderCheckinLog(){
     </div>
 
     <style>
-      /* MODERN SLIDER STYLING */
       .colored-slider {
         -webkit-appearance: none;
         appearance: none;
@@ -5864,8 +6029,7 @@ function renderCheckinLog(){
         box-shadow: 0 6px 16px rgba(0,0,0,0.2);
         transform: scale(1.1);
       }
-      
-      /* CHIP STYLING - Modern Selection Buttons */
+
       .ci-chip {
         transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
       }
@@ -5879,21 +6043,20 @@ function renderCheckinLog(){
         box-shadow: 0 4px 12px rgba(58,155,127,0.25);
         font-weight: 700;
       }
-      
-      /* DETAILS ELEMENT STYLING */
+
       details > summary::-webkit-details-marker {
         display: none;
       }
       details[open] > summary span:last-child {
         transform: rotate(180deg);
       }
-    </style>
+</style>
   `;
 }
 function submitCheckin(){
   if(!ciForm.weight){showToast('Add your weight to continue');return;}
   const p=getProfile();
-  // Auto-pull activity data from logged week
+
   const today=new Date(); const sun=new Date(today); sun.setDate(today.getDate()-today.getDay());
   let totalSteps=0,daysWithSteps=0;
   for(let i=0;i<7;i++){
@@ -5935,7 +6098,7 @@ function renderCheckinHist(){
         <div style="font-weight:800;font-size:0.9rem;color:var(--text);">${c.energy||'—'}<span style="font-size:0.6rem;color:var(--muted);">/10</span></div>
       </div>
       <div style="flex:1;background:var(--surface2);border-radius:8px;padding:7px 9px;border:1px solid var(--border);">
-        <div style="font-size:0.58rem;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:2px;">Hunger</div>
+        <div style="font-size:0.58rem;font-weight:700;color:var(--muted);text-transform:uppercase;margin-bottom:2px;">Hunger Control</div>
         <div style="font-weight:800;font-size:0.9rem;color:var(--text);">${c.hunger||'—'}<span style="font-size:0.6rem;color:var(--muted);">/10</span></div>
       </div>
     </div>
@@ -5945,7 +6108,6 @@ function renderCheckinHist(){
   </div>`).join('');
 }
 
-// ══ SETTINGS ══
 var currentStTab='profile'; var stPersonalInfoEditing=false; var stTargetsEditing=false; var stConditionsEditing=false; var stSportsEditing=false; var stFastingEditing=false; var stMedsEditing=false; const stLocal={};
 function stTab(tab){
   const aliases={alerts:'notif',notifications:'notif'};
@@ -5993,8 +6155,7 @@ function renderSettings(tab){
   const stTDisabled = stTargetsEditing ? '' : ' disabled';
   const stTCursor = stTargetsEditing ? 'text' : 'default';
   if(tab==='profile') panel.innerHTML=`<div style="padding-bottom:0;">
-    
-    <!-- PERSONAL INFORMATION SECTION -->
+
     <div class="lg-card" style="margin-bottom:14px;">
       <div class="goals-v2-head" style="padding-bottom:14px;border-bottom:1px solid var(--border2);margin-bottom:14px;">
         <div class="goals-v2-titleblock">
@@ -6004,13 +6165,12 @@ function renderSettings(tab){
         </div>
         <button id="personal-info-edit-btn" type="button" class="goals-v2-edit" onclick="stPersonalInfoEdit()">${stPersonalInfoEditing?'Done':'Edit'}</button>
       </div>
-        <!-- NAME -->
+
         <div style="margin-bottom:14px;">
           <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Name</label>
           <input type="text" value="${esc(p.name)}" id="st-name"${stPiDisabled} style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;transition:border 0.2s;font-family:inherit;cursor:${stPiCursor};"/>
         </div>
 
-        <!-- UNITS TOGGLE -->
         <div style="margin-bottom:14px;">
           <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Measurement units</label>
           <div style="display:flex;gap:8px;">
@@ -6019,7 +6179,6 @@ function renderSettings(tab){
           </div>
         </div>
 
-        <!-- AGE & WEIGHT -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
           <div>
             <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Age</label>
@@ -6031,7 +6190,6 @@ function renderSettings(tab){
           </div>
         </div>
 
-        <!-- HEIGHT (Unit-aware) -->
         ${(p.unit||'imperial')==='metric'
           ? `<div>
               <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Height (cm)</label>
@@ -6049,7 +6207,6 @@ function renderSettings(tab){
             </div>`
         }
 
-        <!-- ACTIVITY LEVEL -->
         <div style="margin-top:14px;">
           <label style="display:block;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">Activity level</label>
           <select id="st-act"${stPiDisabled} style="width:100%;background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:1rem;color:var(--text);outline:none;cursor:${stPiSelectCursor};transition:border 0.2s;font-family:inherit;font-weight:500;">
@@ -6059,7 +6216,6 @@ function renderSettings(tab){
       </div>
     </div>
 
-    <!-- HEALTH CONDITIONS SECTION — matched to Goals card style -->
     <div class="goals-v2-card goals-v2-green" style="margin-bottom:14px;">
       <div class="goals-v2-head">
         <div class="goals-v2-titleblock">
@@ -6072,7 +6228,6 @@ function renderSettings(tab){
         </button>
       </div>
 
-      <!-- SELECTED CONDITIONS SUMMARY (shown by default) -->
       <div id="conditions-summary" class="goals-v2-summary">
         ${((p.conditions||[]).length > 0 && !((p.conditions||[]).length===1 && (p.conditions||[])[0]==='None'))
           ? `<div class="goals-v2-chipgrid">
@@ -6087,7 +6242,6 @@ function renderSettings(tab){
         }
       </div>
 
-      <!-- EXPANDABLE EDITOR (hidden by default) -->
       <div id="conditions-editor" class="goals-v2-editor">
         <div class="goals-v2-picker">
           ${CONDITIONS.map(c=>`
@@ -6100,7 +6254,6 @@ function renderSettings(tab){
       </div>
     </div>
 
-    <!-- SPORTS & ACTIVITIES SECTION — matched to Goals card style -->
     <div class="goals-v2-card goals-v2-blue" style="margin-bottom:120px;">
       <div class="goals-v2-head">
         <div class="goals-v2-titleblock">
@@ -6113,9 +6266,8 @@ function renderSettings(tab){
         </button>
       </div>
 
-      <!-- SELECTED ACTIVITIES SUMMARY (shown by default) -->
       <div id="sports-summary" class="goals-v2-summary">
-        ${p.sports.length > 0 
+        ${p.sports.length > 0
           ? `<div class="goals-v2-chipgrid">
               ${p.sports.map(s=>`
                 <div class="goals-v2-chip is-challenge">
@@ -6128,7 +6280,6 @@ function renderSettings(tab){
         }
       </div>
 
-      <!-- EXPANDABLE EDITOR (hidden by default) -->
       <div id="sports-editor" class="goals-v2-editor">
         <div class="goals-v2-picker">
           ${SPORTS.map(s=>`
@@ -6148,7 +6299,7 @@ function renderSettings(tab){
       .unit-toggle.selected {
         box-shadow: 0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.2);
       }
-      
+
       .condition-chip, .activity-chip {
         position: relative;
         overflow: hidden;
@@ -6156,7 +6307,7 @@ function renderSettings(tab){
       .condition-chip.selected, .activity-chip.selected {
         box-shadow: 0 0 0 1px #1D9E75, 0 2px 6px rgba(29,158,117,0.2);
       }
-    </style>
+</style>
   </div>
   `;
   if(tab==='targets'){
@@ -6592,22 +6743,22 @@ function stToggleCond(val,btn){
   const arr=p.conditions, idx=arr.indexOf(val);
   if(idx>-1){arr.splice(idx,1);btn.classList.remove('selected');}
   else{
-    if(val==='None'){ 
-      p.conditions=[]; 
-      document.querySelectorAll('.condition-chip').forEach(el=>{ 
+    if(val==='None'){
+      p.conditions=[];
+      document.querySelectorAll('.condition-chip').forEach(el=>{
         if(CONDITIONS.includes(el.textContent.trim())&&el.textContent.trim()!=='None') {
           el.classList.remove('selected');
-        } 
-      }); 
-    } else { 
-      const ni=arr.indexOf('None'); 
-      if(ni>-1){ 
-        arr.splice(ni,1); 
-        document.querySelectorAll('.condition-chip').forEach(el=>{ 
+        }
+      });
+    } else {
+      const ni=arr.indexOf('None');
+      if(ni>-1){
+        arr.splice(ni,1);
+        document.querySelectorAll('.condition-chip').forEach(el=>{
           if(el.textContent.trim()==='None') {
             el.classList.remove('selected');
           }
-        }); 
+        });
       }
     }
     arr.push(val); btn.classList.add('selected');
@@ -6743,7 +6894,6 @@ function stRemoveCondition(condition){
     showToast(`Removed ${condition}`);
   }
 }
-
 
 function stMedsEdit(){
   stMedsEditing=!stMedsEditing;
@@ -6882,14 +7032,13 @@ function stSave(){
     p.activity=document.getElementById('st-act')?.value||p.activity;
     if(p.unit==='metric'){ p.heightCm=document.getElementById('st-ht-cm')?.value||p.heightCm; }
     else{ p.heightFt=document.getElementById('st-ht-ft')?.value||p.heightFt; p.heightIn=document.getElementById('st-ht-in')?.value||p.heightIn; }
-    // conditions and sports handled live in the Profile cards
+
   }
   if(tab==='targets'){p.calorieTarget=+document.getElementById('st-cal')?.value||p.calorieTarget;p.proteinTarget=+document.getElementById('st-pro')?.value||p.proteinTarget;p.carbTarget=+document.getElementById('st-carb')?.value||p.carbTarget;p.waterTarget=+document.getElementById('st-water')?.value||p.waterTarget;p.stepTarget=+document.getElementById('st-steps')?.value||p.stepTarget;}
   if(tab==='fasting'){p.fastingSchedule=document.getElementById('st-fsched')?.value||p.fastingSchedule;p.eatStart=document.getElementById('st-estart')?.value||p.eatStart;const ee=document.getElementById('st-eend');p.eatEnd=(ee&&ee.value)||p.eatEnd;}
   if(tab==='goals'){if(stLocal.goals)p.goals=stLocal.goals;if(stLocal.challenges)p.challenges=stLocal.challenges;}
   saveProfile(p); Object.keys(stLocal).forEach(k=>delete stLocal[k]); refreshApp(); showToast('✓ Profile saved!');
 }
-
 
 function stFastingEdit(){
   if(!stFastingEditing){
@@ -6960,50 +7109,37 @@ function stHideResetConfirmation(){
 }
 
 function performReset(){
-  // Clear all data
+
   localStorage.clear();
   sessionStorage.clear();
-  // Reload app
+
   window.location.reload();
 }
 
-// ══ CONFIRM / RESET ══
 function confirmReset(){ document.getElementById('confirm-icon').textContent='⚠️'; document.getElementById('confirm-title').textContent='Reset Thrive?'; document.getElementById('confirm-text').textContent='This permanently deletes your profile, all check-ins, chat history, food logs, and daily data. Cannot be undone.'; document.getElementById('confirm-yes').onclick=doReset; document.getElementById('confirm-modal').classList.add('show'); }
 function closeConfirm(){ document.getElementById('confirm-modal').classList.remove('show'); }
 function doReset(){ const keys=[]; for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('vita::'))keys.push(k);} keys.forEach(k=>localStorage.removeItem(k)); closeConfirm(); location.reload(); }
 
-// ══ FASTING CONFIRMATION ══
 function openFastingConfirm(){
   const log=getTodayLog();
-  
-  // Explicit fasting state check - check if fastingStartTime is a number and fastingEndTime is NOT a number
+
   const hasFastingStart = log && typeof log.fastingStartTime === 'number';
   const hasFastingEnd = log && typeof log.fastingEndTime === 'number';
   const isFasting = hasFastingStart && !hasFastingEnd;
-  
-  console.log('=== FASTING STATE DEBUG ===');
-  console.log('Full log:', JSON.stringify(log));
-  console.log('fastingStartTime type:', typeof log.fastingStartTime, 'value:', log.fastingStartTime);
-  console.log('fastingEndTime type:', typeof log.fastingEndTime, 'value:', log.fastingEndTime);
-  console.log('hasFastingStart:', hasFastingStart);
-  console.log('hasFastingEnd:', hasFastingEnd);
-  console.log('isFasting:', isFasting);
-  
+
   const modal=document.getElementById('fasting-confirm-modal');
   const title=document.getElementById('fasting-confirm-title');
   const text=document.getElementById('fasting-confirm-text');
   const btn=document.getElementById('fasting-confirm-btn');
-  
+
   if(isFasting){
-    // Calculate current fasting duration
+
     const now=Date.now();
     const elapsedMs=now-log.fastingStartTime;
     const elapsedMin=Math.floor(elapsedMs/1000/60);
     const elapsedH=Math.floor(elapsedMin/60);
     const elapsedM=elapsedMin%60;
-    
-    console.log('Elapsed:', elapsedH, 'h', elapsedM, 'm');
-    
+
     title.textContent='Ready to End Your Fast?';
     text.textContent=`You've been fasting for ${elapsedH}h ${elapsedM}m. End your session now?`;
     btn.textContent='✓ End Fasting';
@@ -7016,7 +7152,7 @@ function openFastingConfirm(){
     btn.style.background='linear-gradient(135deg,#1A73FF,#1A73FF)';
     btn.dataset.action='start';
   }
-  
+
   modal.classList.add('show');
 }
 
@@ -7027,15 +7163,15 @@ function closeFastingConfirm(){
 function confirmFastingAction(){
   const btn=document.getElementById('fasting-confirm-btn');
   const action=btn.dataset.action;
-  console.log('Confirming fasting action:', action);
+
   closeFastingConfirm();
-  
+
   if(action==='start'){
     const log=getTodayLog();
     log.fastingStartTime=new Date().getTime();
     log.fastingEndTime=null;
     saveTodayLog(log);
-    console.log('Fasting started - saved log:', JSON.stringify(log));
+
     showToast('⏱️ Fasting started');
     const p=getProfile();
     if(p) updateFastingRing(p);
@@ -7046,7 +7182,7 @@ function confirmFastingAction(){
     log.fastingEndTime=new Date().getTime();
     saveTodayLog(log);
     const durationHours=Math.round((log.fastingEndTime-log.fastingStartTime)/1000/60/60*10)/10;
-    console.log('Fasting ended - saved log:', JSON.stringify(log));
+
     showToast(`⏱️ Fasting ended (${durationHours}h)`);
     const p=getProfile();
     if(p) updateFastingRing(p);
@@ -7055,7 +7191,6 @@ function confirmFastingAction(){
   }
 }
 
-// ══ CONFETTI + CELEBRATION ══
 let confettiRunning=false;
 const CONFETTI_COLORS=['#2563eb','#38bdf8','#059669','#34d399','#f59e0b','#f97316','#1A73FF','#ec4899','#fff'];
 function showCelebration(icon,title,sub){
@@ -7089,9 +7224,8 @@ function launchConfetti(){
   requestAnimationFrame(draw);
 }
 
-// ══ SMART SLIDERS ══
 const ENERGY_LEVELS=[
-  '', // index 0 unused
+  '',
   {label:'Completely drained — running on empty',    color:'#dc2626'},
   {label:'Very low — hard to get through the day',  color:'#ea580c'},
   {label:'Low — tired most of the time',             color:'#f97316'},
@@ -7105,16 +7239,16 @@ const ENERGY_LEVELS=[
 ];
 const HUNGER_LEVELS=[
   '',
-  {label:'No hunger at all — appetite was low',      color:'#1A73FF'},
+  {label:'Very hard week — cravings won often',      color:'#dc2626'},
+  {label:'Strong cravings — hard to stay on plan',   color:'#f97316'},
+  {label:'Often hungry — needed extra willpower',    color:'#ea580c'},
+  {label:'Some control — cravings were noticeable',  color:'#d97706'},
+  {label:'Moderate control — manageable hunger',     color:'#16a34a'},
+  {label:'Good control — cravings stayed limited',   color:'#059669'},
+  {label:'Strong control — productive and steady',   color:'#059669'},
   {label:'Very controlled — easy to stay on plan',   color:'#0891b2'},
-  {label:'Mostly satisfied — rare cravings',         color:'#059669'},
-  {label:'Good control — minor hunger after meals',  color:'#16a34a'},
-  {label:'Manageable — some cravings but in control',color:'#65a30d'},
-  {label:'Noticeable hunger — needed willpower',     color:'#ca8a04'},
-  {label:'Often hungry — snacking more than usual',  color:'#d97706'},
-  {label:'Strong cravings — hard to resist',         color:'#ea580c'},
-  {label:'Very hungry — difficult to stick to plan', color:'#f97316'},
-  {label:'Out of control — cravings won this week',  color:'#dc2626'},
+  {label:'Excellent control — rare hunger spikes',   color:'#1A73FF'},
+  {label:'Fully controlled — hunger felt balanced',  color:'#1A73FF'},
 ];
 
 function updateEnergySlider(val){
@@ -7144,7 +7278,6 @@ function updateHungerSlider(val){
   }
 }
 
-// ══ SHARE ══
 function openShareModal(){
   const p=getProfile(); if(!p) return;
   const checkins=S.get('checkins')||[];
@@ -7185,13 +7318,12 @@ async function doShare(){
     try{ await navigator.share({title:'My THRIVE Progress',text}); closeShareModal(); showToast('Shared! 🎉'); }
     catch(e){ if(e.name!=='AbortError') showToast('Could not share'); }
   } else {
-    // fallback: copy to clipboard
+
     try{ await navigator.clipboard.writeText(text); closeShareModal(); showToast('📋 Copied to clipboard!'); }
     catch(e){ showToast('Share not supported on this device'); }
   }
 }
 
-// ══ ICS CALENDAR DOWNLOAD ══
 function makeICS(title,description,timeStr,freq){
   const now=new Date();
   const[h,m]=timeStr.split(':').map(Number);
@@ -7220,7 +7352,7 @@ function downloadICS(type){
   } else if(type==='meds'){
     const meds=p.medications||[];
     if(!meds.length){showToast('No medications added yet');return;}
-    // Create one ICS per med, download first
+
     const m=meds[0];
     ics=makeICS(`💊 ${m.name} reminder — Thrive`,`Time to take ${m.name}${m.dose?' ('+m.dose+')':''}`,m.time,'DAILY');
     filename='thrive-meds.ics';
@@ -7233,15 +7365,9 @@ function downloadICS(type){
   showToast('📅 Calendar reminder downloaded!');
 }
 
-// ══ TOAST ══
 let toastTimer;
 function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2400); }
 
-
-// Settings and Explore pills are routed by the hardened settings router near the end of the file.
-
-
-/* ── HOME METRIC CARD CLICK FIX ── */
 window.getTodayActivities = window.getTodayActivities || function(){
   return S.get('activities:'+todayKey()) || [];
 };
@@ -7353,8 +7479,6 @@ window.openWaterLogSheet=openWaterLogSheet;
 window.openLogModal=openLogModal;
 window.openFastingConfirm=openFastingConfirm;
 
-
-// === THRIVE FINAL CLEAN ROUTER + LIVE UI SAFETY ===
 (function(){
   const validSettingsTabs=['profile','targets','fasting','meds','notif','goals'];
   const aliases={alert:'notif',alerts:'notif',notification:'notif',notifications:'notif',medicine:'meds',med:'meds'};
@@ -7380,11 +7504,8 @@ window.openFastingConfirm=openFastingConfirm;
     window.openSettingsTab(btn.dataset.settingsTab,e);
   },true);
 })();
-
 </script>
 
-
-<!-- METRIC INPUT SHEET — water + steps -->
 <div class="modal-overlay metric-input-sheet" id="metric-input-sheet" onclick="if(event.target===this)closeMetricInputSheet()">
   <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="metric-sheet-title">
     <div class="modal-handle"></div>
@@ -7422,13 +7543,6 @@ window.openFastingConfirm=openFastingConfirm;
     </div>
   </div>
 </div>
-<!-- Removed duplicate home-metric-input-repair-v2; final reliable metric logger handles water and steps. -->
-
-
-
-<!-- Removed duplicate home-water-steps-final-fix; final reliable metric logger handles water and steps. -->
-
-
 
 <script id="thrive-settings-tabs-clean-router">
 (function(){
@@ -7512,8 +7626,6 @@ window.openFastingConfirm=openFastingConfirm;
   }, true);
 })();
 
-
-/* Live Goals render fix: selected goals/challenges appear immediately without leaving the tab. */
 (function(){
   function normArr(v){ return Array.isArray(v) ? v : []; }
   function htmlEsc(v){ return String(v == null ? '' : v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
@@ -7597,9 +7709,7 @@ window.openFastingConfirm=openFastingConfirm;
     };
   }
 })();
-
 </script>
-
 
 <style>
 #page-settings .goals-v2-edit.edit-state{
@@ -7843,8 +7953,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-<!-- Thrive live edit-button refresh patch v4 -->
 <style>
 #page-settings .goals-v2-card.is-editing .goals-v2-edit,
 #page-settings .goals-v2-edit.done-state{
@@ -7949,8 +8057,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-<!-- Thrive fasting bubble options patch v6 -->
 <style>
 #page-settings .fasting-v2-card{
   border-color:rgba(26,115,255,.22) !important;
@@ -8020,7 +8126,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-<!-- Thrive fasting edit toggle + spacing patch v7 -->
 <style>
 #page-settings .fasting-v2-card{margin-bottom:18px !important;}
 #page-settings .fasting-v2-card + .medical-card{margin-top:14px !important;}
@@ -8095,8 +8200,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-<!-- Thrive fasting summary bubbles patch v8 -->
 <style>
 #page-settings .fasting-v2-summary{
   align-items:flex-start !important;
@@ -8126,8 +8229,6 @@ window.openFastingConfirm=openFastingConfirm;
   color:#7aa9ff !important;
 }
 
-
-/* v13 onboarding scroll cleanup: remove persistent footer blank space */
 #page-onboard{
   overflow-y:auto!important;
   overflow-x:hidden!important;
@@ -8165,8 +8266,6 @@ window.openFastingConfirm=openFastingConfirm;
 }
 </style>
 
-
-<!-- FINAL PATCH: reliable hydration + steps manual logging until phone/watch sync is available -->
 <style id="metric-input-auto-capture-ux-fix">
   .metric-input-sheet .modal-sheet{
     max-height:calc(100vh - 28px)!important;
@@ -8289,7 +8388,7 @@ window.openFastingConfirm=openFastingConfirm;
     ensureAutoNote();
     updateSheetNumbers();
     sheet.classList.add('show');
-    // Do not auto-focus. It was forcing the keyboard open and crowding the action buttons.
+
     return false;
   }
   function closeSheet(){
@@ -8354,9 +8453,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-
-<!-- Thrive targets edit/done visual parity patch -->
 <style>
 #page-settings .targets-v2-card #targets-edit-btn.edit-state,
 #page-settings #targets-edit-btn.edit-state{
@@ -8400,8 +8496,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-<!-- Thrive v22 clean retry: score baseline + Coach engine repair -->
 <style>
 #page-chat .coach-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
 #page-chat .coach-mini-card{background:rgba(26,115,255,.055);border:1px solid var(--border);border-radius:14px;padding:10px 11px;}
@@ -8537,7 +8631,7 @@ window.openFastingConfirm=openFastingConfirm;
       var last=checkins[checkins.length-1];
       html('coach-progress-trend','<div class="coach-mini-grid"><div class="coach-mini-card"><div class="coach-mini-label">Latest weight</div><div class="coach-mini-value">'+(last.weight?last.weight+' lbs':'—')+'</div><div class="coach-mini-sub">weekly check-in</div></div><div class="coach-mini-card"><div class="coach-mini-label">Energy</div><div class="coach-mini-value">'+(last.energy||'—')+'</div><div class="coach-mini-sub">last check-in</div></div></div>');
     } else {
-      html('coach-progress-trend','<div style="font-size:0.82rem;color:var(--muted);line-height:1.55;">Complete your first weekly check-in to unlock weight, hunger, and energy trend coaching.</div>');
+      html('coach-progress-trend','<div style="font-size:0.82rem;color:var(--muted);line-height:1.55;">Complete your first weekly check-in to unlock weight, hunger control, and energy trend coaching.</div>');
     }
     if(typeof renderLogFeed==='function') try{renderLogFeed();}catch(e){}
   };
@@ -8545,10 +8639,7 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-
 <script>
-/* THRIVE coach context retry: honest, data-backed best move copy */
 (function(){
   function el(id){return document.getElementById(id);}
   function set(id,v){var x=el(id); if(x) x.textContent=v;}
@@ -8660,15 +8751,13 @@ window.openFastingConfirm=openFastingConfirm;
       '</div>'+(s.overall===0?'<div class="coach-empty-note">Log water, steps, food, or one activity to unlock stronger coaching. Thrive no longer gives starter points before you log something.</div>':''));
     var checkins=store('checkins',[]);
     if(checkins.length){var last=checkins[checkins.length-1]; html('coach-progress-trend','<div class="coach-mini-grid"><div class="coach-mini-card"><div class="coach-mini-label">Latest weight</div><div class="coach-mini-value">'+(last.weight?last.weight+' lbs':'—')+'</div><div class="coach-mini-sub">weekly check-in</div></div><div class="coach-mini-card"><div class="coach-mini-label">Energy</div><div class="coach-mini-value">'+(last.energy||'—')+'</div><div class="coach-mini-sub">last check-in</div></div></div>');}
-    else html('coach-progress-trend','<div style="font-size:0.82rem;color:var(--muted);line-height:1.55;">Complete your first weekly check-in to unlock weight, hunger, and energy trend coaching.</div>');
+    else html('coach-progress-trend','<div style="font-size:0.82rem;color:var(--muted);line-height:1.55;">Complete your first weekly check-in to unlock weight, hunger control, and energy trend coaching.</div>');
     if(typeof renderLogFeed==='function') try{renderLogFeed();}catch(e){}
   };
   document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){try{window.renderCoachEngine();}catch(e){}},200);});
 })();
 </script>
 
-
-<!-- Thrive coach refresh + manual hydration note fix -->
 <style id="thrive-coach-refresh-manual-fix-css">
   #coach-refresh-stamp{
     margin:-6px 0 12px;
@@ -8799,9 +8888,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-
-<!-- Thrive final fix: hydration remains manual + coach refresh checks latest data -->
 <style id="thrive-final-hydration-refresh-fix-css">
   #metric-auto-note.thrive-hide-water-note{display:none!important;}
   #coach-refresh-stamp{margin:-6px 0 12px;font-size:.74rem;line-height:1.35;color:var(--muted);font-weight:750;}
@@ -8850,7 +8936,7 @@ window.openFastingConfirm=openFastingConfirm;
   window.renderCoachEngine=function(){var p=profile(),l=todayLog(),h=habits(),a=acts(),s=scoreParts(p,l,h,a),g=completed(p,l,h,a),m=move(p,l,h,a,s),d=daysWithLogs();var sc=document.getElementById('score-circle');if(sc)sc.style.setProperty('--score',s.overall);set('score-num',s.overall);set('score-status',status(s.overall));set('daily-progress',g.completed+' of '+g.total);var milestones=[25,50,75,100],next=100;for(var i=0;i<milestones.length;i++){if(s.overall<milestones[i]){next=milestones[i];break;}}set('score-until-next',next+(s.overall<100?' (+'+(next-s.overall)+' pts)':''));set('score-weekly',d>1?'+ '+d+' active days':'—');
     set('hero-action-name',m.title);set('hero-impact',m.impact+' Thrive');set('hero-success',s.overall===0?'Easy first win':'Good next step');set('hero-insight',m.action);var tips=document.querySelector('.hero-coaching-tips');if(tips){tips.innerHTML='<div class="coaching-tip">💡 <strong>Why:</strong> '+m.body+'</div><div class="coaching-tip">📌 <strong>Based on:</strong> '+m.context.map(function(c){return c[1]+': '+c[2];}).join(' · ')+'</div>';}
     width('m-water-fill',s.hydration);width('m-steps-fill',s.movement);width('m-fast-fill',s.fasting);width('m-act-fill',s.activity);var wl=Math.max(0,(p.waterTarget||100)-num(l.water)),sl=Math.max(0,(p.stepTarget||8000)-num(l.steps));set('m-water-val',wl?String(wl):String(num(l.water)));set('m-water-sub',wl?'oz remaining':'oz complete');set('m-steps-val',sl?(sl>=1000?(sl/1000).toFixed(1)+'k':String(sl)):(num(l.steps)>=1000?(num(l.steps)/1000).toFixed(1)+'k':String(num(l.steps))));set('m-steps-sub',sl?'remaining':'steps');set('m-fast-val',l.fastingStartTime?(s.fasting+'%'):'—');set('m-fast-sub',l.fastingStartTime?'fasting':'not started');set('m-act-val',String(a.length));set('m-act-sub',a.length===1?'session logged':'sessions logged');set('m-water-status',s.hydration>=100?'🎉 Complete':s.hydration>0?'In Progress':'Getting Started');set('m-steps-status',s.movement>=100?'🎉 Complete':s.movement>0?'In Progress':'Getting Started');set('m-fast-status',l.fastingStartTime?'Active':'Ready');set('m-act-status',a.length?'In Progress':'Getting Started');
-    set('coach-priority-title',m.title);set('coach-impact-badge','↗ '+m.impact+' pts');html('coach-priority-body',m.body+'<div class="coach-context-list">'+m.context.map(function(c){return '<div class="coach-context-row"><div class="coach-context-ico">'+c[0]+'</div><div class="coach-context-copy"><strong>'+c[1]+':</strong> '+c[2]+'</div></div>';}).join('')+'</div><div style="margin-top:12px;font-size:.82rem;color:var(--text);font-weight:850;line-height:1.5;">Next step: '+m.action+'</div>');set('coach-days-badge',d+'/7 days');html('coach-weekly-snapshot','<div class="coach-mini-grid"><div class="coach-mini-card"><div class="coach-mini-label">Water</div><div class="coach-mini-value">'+num(l.water)+' / '+(p.waterTarget||100)+' oz</div><div class="coach-mini-sub">'+(wl?wl+' oz left':'goal complete')+'</div></div><div class="coach-mini-card"><div class="coach-mini-label">Steps</div><div class="coach-mini-value">'+fmt(l.steps)+'</div><div class="coach-mini-sub">goal '+fmt(p.stepTarget||8000)+'</div></div><div class="coach-mini-card"><div class="coach-mini-label">Food</div><div class="coach-mini-value">'+foodTotal(h)+' logs</div><div class="coach-mini-sub">veg, fruit, fiber, protein</div></div><div class="coach-mini-card"><div class="coach-mini-label">Activity</div><div class="coach-mini-value">'+a.length+'</div><div class="coach-mini-sub">sessions today</div></div></div>'+(s.overall===0?'<div class="coach-empty-note">Log water, steps, food, or one activity to unlock stronger coaching. Thrive no longer gives starter points before you log something.</div>':''));var ci=checkins();if(ci.length){var last=ci[ci.length-1];html('coach-progress-trend','<div class="coach-mini-grid"><div class="coach-mini-card"><div class="coach-mini-label">Latest weight</div><div class="coach-mini-value">'+(last.weight?last.weight+(p.units==='metric'?' kg':' lbs'):'—')+'</div><div class="coach-mini-sub">weekly check-in</div></div><div class="coach-mini-card"><div class="coach-mini-label">Energy</div><div class="coach-mini-value">'+(last.energy||'—')+'</div><div class="coach-mini-sub">last check-in</div></div></div>');}else html('coach-progress-trend','<div style="font-size:0.82rem;color:var(--muted);line-height:1.55;">Complete your first weekly check-in to unlock weight, hunger, and energy trend coaching.</div>');if(typeof renderLogFeed==='function')try{renderLogFeed();}catch(e){};updateStamp('checked');return m;};
+    set('coach-priority-title',m.title);set('coach-impact-badge','↗ '+m.impact+' pts');html('coach-priority-body',m.body+'<div class="coach-context-list">'+m.context.map(function(c){return '<div class="coach-context-row"><div class="coach-context-ico">'+c[0]+'</div><div class="coach-context-copy"><strong>'+c[1]+':</strong> '+c[2]+'</div></div>';}).join('')+'</div><div style="margin-top:12px;font-size:.82rem;color:var(--text);font-weight:850;line-height:1.5;">Next step: '+m.action+'</div>');set('coach-days-badge',d+'/7 days');html('coach-weekly-snapshot','<div class="coach-mini-grid"><div class="coach-mini-card"><div class="coach-mini-label">Water</div><div class="coach-mini-value">'+num(l.water)+' / '+(p.waterTarget||100)+' oz</div><div class="coach-mini-sub">'+(wl?wl+' oz left':'goal complete')+'</div></div><div class="coach-mini-card"><div class="coach-mini-label">Steps</div><div class="coach-mini-value">'+fmt(l.steps)+'</div><div class="coach-mini-sub">goal '+fmt(p.stepTarget||8000)+'</div></div><div class="coach-mini-card"><div class="coach-mini-label">Food</div><div class="coach-mini-value">'+foodTotal(h)+' logs</div><div class="coach-mini-sub">veg, fruit, fiber, protein</div></div><div class="coach-mini-card"><div class="coach-mini-label">Activity</div><div class="coach-mini-value">'+a.length+'</div><div class="coach-mini-sub">sessions today</div></div></div>'+(s.overall===0?'<div class="coach-empty-note">Log water, steps, food, or one activity to unlock stronger coaching. Thrive no longer gives starter points before you log something.</div>':''));var ci=checkins();if(ci.length){var last=ci[ci.length-1];html('coach-progress-trend','<div class="coach-mini-grid"><div class="coach-mini-card"><div class="coach-mini-label">Latest weight</div><div class="coach-mini-value">'+(last.weight?last.weight+(p.units==='metric'?' kg':' lbs'):'—')+'</div><div class="coach-mini-sub">weekly check-in</div></div><div class="coach-mini-card"><div class="coach-mini-label">Energy</div><div class="coach-mini-value">'+(last.energy||'—')+'</div><div class="coach-mini-sub">last check-in</div></div></div>');}else html('coach-progress-trend','<div style="font-size:0.82rem;color:var(--muted);line-height:1.55;">Complete your first weekly check-in to unlock weight, hunger control, and energy trend coaching.</div>');if(typeof renderLogFeed==='function')try{renderLogFeed();}catch(e){};updateStamp('checked');return m;};
   function snap(){var p=profile(),l=todayLog(),h=habits(),a=acts();return {water:num(l.water),steps:num(l.steps),food:foodTotal(h),activity:(a||[]).length,fasting:!!l.fastingStartTime,waterTarget:p.waterTarget,stepTarget:p.stepTarget,goals:p.goals||[],challenges:p.challenges||[],checkins:checkins().length};}
   function hash(o){try{return JSON.stringify(o);}catch(e){return ''+Date.now();}}
   function ensureRefreshElements(){var page=document.getElementById('page-chat');if(!page)return {};var sub=page.querySelector('.section-sub');var stamp=document.getElementById('coach-refresh-stamp');if(!stamp&&sub){stamp=document.createElement('div');stamp.id='coach-refresh-stamp';sub.insertAdjacentElement('afterend',stamp);}var result=document.getElementById('coach-refresh-result');if(!result&&stamp){result=document.createElement('div');result.id='coach-refresh-result';stamp.insertAdjacentElement('afterend',result);}return {stamp:stamp,result:result};}
@@ -8865,9 +8951,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-
-<!-- Thrive home best move simplification: home shows best accomplishment, Coach keeps details -->
 <style id="thrive-home-best-win-css">
   .hero-recommendation-card .hero-context,
   .hero-recommendation-card .hero-coaching-tips{
@@ -8942,15 +9025,12 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
 <style id="metric-done-only-polish">
   #metric-input-sheet .metric-sheet-actions.single-action{display:none!important;}
   #metric-input-sheet .field{margin-bottom:0!important;}
   #metric-input-sheet .metric-done-btn{min-width:92px!important;min-height:44px!important;}
 </style>
 
-
-<!-- Thrive home accomplishment refresh + hydration note cleanup -->
 <style id="thrive-home-refresh-fix-css">
   .hero-recommendation-card.refreshing{animation:thriveHomeRefreshPulse .52s ease both;}
   @keyframes thriveHomeRefreshPulse{
@@ -9035,9 +9115,6 @@ window.openFastingConfirm=openFastingConfirm;
 })();
 </script>
 
-
-
-<!-- Thrive dynamic best accomplishment priority fix -->
 <script id="thrive-dynamic-best-accomplishment-js">
 (function(){
   'use strict';
